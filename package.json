@@ -1,0 +1,25 @@
+{
+  "name": "cs-449",
+  "description": "CS 449: Human Computer Interaction",
+  "version": "0.1.0",
+  "homepage": "https://github.com/shengmin/cs-449",
+  "author": {
+    "name": "ShengMin Zhang",
+    "email": "me@shengmin.me",
+    "url": "http://shengmin.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/shengmin/cs-449.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shengmin/cs-449/issues"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "keywords": [],
+  "dependencies": {
+    "express": "~3.3.4"
+  }
+}
