@@ -1,0 +1,13 @@
+/* line 3, ../../sass/core.scss */
+.cs449-has-checkbox .ui-btn-inner a.ui-link-inherit {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+/* line 8, ../../sass/core.scss */
+.cs449-has-checkbox .ui-btn-inner a.ui-link-inherit .ui-btn {
+  padding: 10px;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+}
