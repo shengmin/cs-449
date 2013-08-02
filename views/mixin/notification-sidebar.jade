@@ -1,0 +1,8 @@
+mixin notification-sidebar
+  div.notification-sidebar.hidden
+    each notification in notifications
+      - classes = ['row', 'group'];
+      - if (notification.active) { classes.push('active'); }
+      div(class=classes)
+        div.left-column= notification.name
+        div.right-column= notification.count

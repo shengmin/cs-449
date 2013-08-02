@@ -1,16 +1,83 @@
-.cs449-has-checkbox {
-	.ui-btn-inner {
-		a.ui-link-inherit {
-			padding-top: 0;
-			padding-bottom: 0;
-			padding-left: 0;
+@import "compass/reset";
+@import "compass/utilities/general/clearfix";
+@import "compass/css3/box";
+@import "compass/css3/transform";
+@import "compass/css3/transition";
 
-			.ui-btn {
-				padding: 10px;
-				margin: 0;
-				border: none;
-				border-radius: 0;
-			}
-		}
-	}
+body {
+  font-family: helvetica neue, arial;
+  font-size: 12px;
+  color: #000;
+}
+
+body, html {
+  height: 100%;
+}
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.left-column {
+  float: left;
+}
+
+.right-column {
+  float: right;
+}
+
+.notification-sidebar {
+  @include display-box;
+  @include box-orient(vertical);
+  @include box-pack(center);
+  @include transition-duration(1s);
+  @include transition-property(transform);
+
+  $width: 250px;
+
+  height: 100%;
+  font-size: 24px;
+  color: #fff;
+  width: $width;
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  &.hidden {
+    @include translateX(-$width);
+  }
+
+  .row {
+    padding: 12px;
+    border-bottom: 1px solid #fff;
+  }
+
+  .row:first-child {
+    border-top: 1px solid #fff;
+  }
+
+  .row:hover {
+    cursor: pointer;
+    background-color: #3395d5;
+  }
+}
+
+.cs449-has-checkbox {
+  .ui-btn-inner {
+    a.ui-link-inherit {
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+
+      .ui-btn {
+        padding: 10px;
+        margin: 0;
+        border: none;
+        border-radius: 0;
+      }
+    }
+  }
 }
