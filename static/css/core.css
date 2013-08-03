@@ -124,7 +124,7 @@ i[class*="icon-"]:before {
 }
 
 /* line 9, ../../sass/_base.scss */
-.list-row, .list-row > .content-column > .header {
+.header-menu, .list-row, .list-row > .content-column > .header {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-box;
@@ -136,60 +136,120 @@ i[class*="icon-"]:before {
 }
 
 /* line 14, ../../sass/_base.scss */
+.clickable {
+  cursor: pointer;
+}
+
+/* line 18, ../../sass/_base.scss */
+.animatable {
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+/* line 23, ../../sass/_base.scss */
+.theme-flat-black {
+  background-color: #111;
+  color: #b9b9b9;
+}
+
+/* line 28, ../../sass/_base.scss */
+.theme-flat-grey {
+  background-color: #dfdcdf;
+  color: #474647;
+}
+
+/* line 35, ../../sass/_base.scss */
+.header-menu {
+  /*
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: $header-menu-height;
+  */
+}
+/* line 45, ../../sass/_base.scss */
+.header-menu > .option {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+  padding: 14px 0;
+  padding-top: 9px;
+  text-align: center;
+  border-top: 5px solid #515151;
+  margin-right: 2px;
+}
+/* line 55, ../../sass/_base.scss */
+.header-menu > .option:last-child {
+  margin-right: 0;
+}
+
+/* line 60, ../../sass/_base.scss */
+.header-menu.theme-flat-black {
+  border-bottom: 1px solid #999;
+}
+/* line 63, ../../sass/_base.scss */
+.header-menu.theme-flat-black > .option {
+  background-color: #292929;
+}
+/* line 67, ../../sass/_base.scss */
+.header-menu.theme-flat-black > .option.clickable:hover {
+  background-color: #111;
+  border-top-color: #3395d5;
+}
+
+/* line 73, ../../sass/_base.scss */
 .multi-line-text, .one-line-text, .list-title > h1, .list-title > h2, .message-list .from-text, .message-list .from-id, .message-list .from-name, .list-row > .content-column > .body {
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
-/* line 19, ../../sass/_base.scss */
+/* line 78, ../../sass/_base.scss */
 .one-line-text, .list-title > h1, .list-title > h2, .message-list .from-text, .message-list .from-id, .message-list .from-name {
   white-space: nowrap;
 }
 
-/* line 24, ../../sass/_base.scss */
+/* line 83, ../../sass/_base.scss */
 .list-title {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #5f9cc5), color-stop(100%, #396b9e));
-  background-image: -webkit-linear-gradient(#5f9cc5, #396b9e);
-  background-image: -moz-linear-gradient(#5f9cc5, #396b9e);
-  background-image: -o-linear-gradient(#5f9cc5, #396b9e);
-  background-image: linear-gradient(#5f9cc5, #396b9e);
+  background-color: #3395d5;
   text-align: center;
   color: #fff;
 }
-/* line 29, ../../sass/_base.scss */
+/* line 89, ../../sass/_base.scss */
 .list-title > h1 {
   font-size: 24px;
   font-weight: bold;
 }
-/* line 35, ../../sass/_base.scss */
+/* line 95, ../../sass/_base.scss */
 .list-title > h2 {
   font-size: 20px;
 }
-/* line 40, ../../sass/_base.scss */
+/* line 100, ../../sass/_base.scss */
 .list-title > .row {
   padding-bottom: 12px;
 }
-/* line 44, ../../sass/_base.scss */
+/* line 104, ../../sass/_base.scss */
 .list-title > .row:first-child {
   padding-top: 12px;
 }
 
-/* line 49, ../../sass/_base.scss */
+/* line 109, ../../sass/_base.scss */
 .list-row {
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #eeeeee));
-  background-image: -webkit-linear-gradient(#ffffff, #eeeeee);
-  background-image: -moz-linear-gradient(#ffffff, #eeeeee);
-  background-image: -o-linear-gradient(#ffffff, #eeeeee);
-  background-image: linear-gradient(#ffffff, #eeeeee);
-  height: 75px;
+  height: 80px;
   border-top: 1px solid #999999;
   cursor: pointer;
 }
-/* line 60, ../../sass/_base.scss */
+/* line 120, ../../sass/_base.scss */
 .list-row:last-child {
   border-bottom: 1px solid #999999;
 }
-/* line 64, ../../sass/_base.scss */
+/* line 124, ../../sass/_base.scss */
 .list-row:hover {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #d4d4d4));
   background-image: -webkit-linear-gradient(#eeeeee, #d4d4d4);
@@ -197,22 +257,22 @@ i[class*="icon-"]:before {
   background-image: -o-linear-gradient(#eeeeee, #d4d4d4);
   background-image: linear-gradient(#eeeeee, #d4d4d4);
 }
-/* line 67, ../../sass/_base.scss */
+/* line 127, ../../sass/_base.scss */
 .list-row:hover .icon-container > i {
   color: #4d90fe;
 }
-/* line 72, ../../sass/_base.scss */
+/* line 132, ../../sass/_base.scss */
 .list-row:active {
   background: #d4d4d4;
 }
-/* line 76, ../../sass/_base.scss */
+/* line 136, ../../sass/_base.scss */
 .list-row > .button-container, .list-row > .icon-container {
-  line-height: 75px;
-  height: 75px;
-  width: 75px;
+  line-height: 80px;
+  height: 80px;
+  width: 80px;
   text-align: center;
 }
-/* line 86, ../../sass/_base.scss */
+/* line 146, ../../sass/_base.scss */
 .list-row > .icon-container > i {
   -webkit-transition-property: color;
   -moz-transition-property: color;
@@ -222,27 +282,32 @@ i[class*="icon-"]:before {
   -moz-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
-  font-size: 22.5px;
+  font-size: 24px;
   color: #888;
   cursor: pointer;
 }
-/* line 104, ../../sass/_base.scss */
+/* line 156, ../../sass/_base.scss */
+.list-row > .column {
+  height: 100%;
+}
+/* line 165, ../../sass/_base.scss */
 .list-row > .content-column {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -ms-box-flex: 1;
   box-flex: 1;
 }
-/* line 107, ../../sass/_base.scss */
+/* line 168, ../../sass/_base.scss */
 .list-row > .content-column > .header {
   font-size: 14px;
-  height: 40px;
-  line-height: 40px;
+  height: 35px;
+  line-height: 35px;
 }
-/* line 115, ../../sass/_base.scss */
+/* line 175, ../../sass/_base.scss */
 .list-row > .content-column > .body {
   font-size: 12px;
   font-weight: 300;
+  line-height: 14px;
 }
 
 /* line 13, ../../sass/core.scss */

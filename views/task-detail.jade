@@ -1,7 +1,13 @@
 extend main-layout
 include mixin/notification-sidebar
+include mixin/header-menu
 block content
   div.task-detail-view
+    +header-menu([
+      { text: 'Sort By' },
+      { text: 'Remind Me Later' },
+      { text: 'Mark Complete' }
+    ])
     div.list-title
       h1.row #{task.name}
       h2.row #{task.for}
@@ -13,7 +19,7 @@ block content
           div.column.content-column
             div.header
               div.from-name #{message.fromName}
-            div.body #{message.content}
+            p.body #{message.content}
           div.column.icon-container
             i(class="icon-reply")
 

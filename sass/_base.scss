@@ -11,6 +11,65 @@ $default-padding: 12px;
   @include box-align(stretch);
 }
 
+.clickable {
+  cursor: pointer;
+}
+
+.animatable {
+  @include transition-property(all);
+  @include transition-duration(0.5s);
+}
+
+.theme-flat-black {
+  background-color: #111;
+  color: #b9b9b9;
+}
+
+.theme-flat-grey {
+  background-color: #dfdcdf;
+  color: #474647;
+}
+
+$header-menu-height: 60px;
+
+.header-menu {
+  @extend %has-columns;
+
+  /*
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: $header-menu-height;
+  */
+
+  > .option {
+    @include box-flex(1);
+
+    padding: 14px 0;
+    padding-top: 9px;
+    text-align: center;
+    border-top: 5px solid #515151;
+    margin-right: 2px;
+  }
+
+  > .option:last-child {
+    margin-right: 0;
+  }
+}
+
+.header-menu.theme-flat-black {
+  border-bottom: 1px solid #999;
+
+  > .option {
+    background-color: #292929;
+  }
+
+  > .option.clickable:hover {
+    background-color: #111;
+    border-top-color: #3395d5;
+  }
+}
+
 .multi-line-text {
   text-overflow: ellipsis;
   overflow: hidden;
@@ -22,7 +81,8 @@ $default-padding: 12px;
 }
 
 .list-title {
-  @include background-image(linear-gradient(#5f9cc5,#396b9e));
+  //@include background-image(linear-gradient(#5f9cc5,#396b9e));
+  background-color: #3395d5;
   text-align: center;
   color: #fff;
 
@@ -47,11 +107,11 @@ $default-padding: 12px;
 }
 
 .list-row {
-  $height: 75px;
+  $height: 80px;
   $border-color: #999;
 
   @extend %has-columns;
-  @include background-image(linear-gradient(#fff, #eee));
+  // @include background-image(linear-gradient(#fff, #eee));
 
   height: $height;
   border-top: 1px solid $border-color;
@@ -94,6 +154,7 @@ $default-padding: 12px;
   }
 
   > .column {
+    height: 100%;
     // border-right: 1px solid $border-color;
   }
 
@@ -107,9 +168,8 @@ $default-padding: 12px;
     > .header {
       @extend %has-columns;
       font-size: 14px;
-      height: 40px;
-      line-height: 40px;
-
+      height: 35px;
+      line-height: 35px;
     }
 
     > .body {
@@ -117,6 +177,7 @@ $default-padding: 12px;
 
       font-size: 12px;
       font-weight: 300;
+      line-height: 14px;
       //padding: $default-padding;
     }
   }
