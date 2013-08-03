@@ -1,17 +1,32 @@
+@charset "UTF-8";
+
 @import "compass/reset";
 @import "compass/utilities/general/clearfix";
 @import "compass/css3/box";
 @import "compass/css3/transform";
 @import "compass/css3/transition";
+@import "compass/css3/opacity";
+@import "compass/css3/images";
+@import "fonts";
+@import "base";
 
 body {
-  font-family: helvetica neue, arial;
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue", "Arial";
   font-size: 12px;
   color: #000;
 }
 
 body, html {
   height: 100%;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 18px;
 }
 
 .group:after {
@@ -28,20 +43,74 @@ body, html {
   float: right;
 }
 
+.header-toolbar {
+  @extend .group;
+
+  background-color: #111;
+  color: #fff;
+  font-size: 24px;
+
+  .column {
+    @extend .left-column;
+    $height: 75px;
+    @include background-image(linear-gradient(#3c3c3c, #111));
+    height: $height;
+    line-height: $height;
+    padding: 0 10px;
+    border-top: 5px solid #515151;
+    margin-right: 2px;
+    cursor: pointer;
+  }
+
+  .column:active, .column:hover {
+    @include background-image(linear-gradient(lighten(#3c3c3c, 5%), lighten(#111, 5%)));
+  }
+
+  .column:last-child {
+    margin-right: 0;
+  }
+}
+
+.task-detail-view {
+  > h1 {
+    text-align: center;
+  }
+
+  > .header {
+    background-color: #1c4c8a;
+  }
+}
+
+.message-list {
+  .from-text, .from-id, .from-name {
+    @extend .one-line-text;
+    // text-align: center;
+    // padding: $default-padding $default-padding 0 $default-padding;
+  }
+
+  .from-id, .from-name {
+    @include box-flex(1);
+    // font-weight: 300;
+  }
+
+}
+
 .notification-sidebar {
   @include display-box;
   @include box-orient(vertical);
   @include box-pack(center);
   @include transition-duration(1s);
   @include transition-property(transform);
+  @include opacity(0.8);
 
   $width: 250px;
+  $row-border-color: #999;
 
   height: 100%;
   font-size: 24px;
   color: #fff;
   width: $width;
-  background-color: #000;
+  background-color: #111;
   position: absolute;
   top: 0;
   left: 0;
@@ -51,16 +120,16 @@ body, html {
   }
 
   .row {
+    cursor: pointer;
     padding: 12px;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid $row-border-color;
   }
 
   .row:first-child {
-    border-top: 1px solid #fff;
+    border-top: 1px solid $row-border-color;
   }
 
   .row:hover {
-    cursor: pointer;
     background-color: #3395d5;
   }
 }

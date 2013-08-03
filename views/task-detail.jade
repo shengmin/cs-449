@@ -1,0 +1,20 @@
+extend main-layout
+include mixin/notification-sidebar
+block content
+  div.task-detail-view
+    div.list-title
+      h1.row #{task.name}
+      h2.row #{task.for}
+    div.message-list
+      each message in task.messages
+        div.list-row
+          div.column.icon-container
+            i(class=message.iconClass)
+          div.column.content-column
+            div.header
+              div.from-name #{message.fromName}
+            div.body #{message.content}
+          div.column.icon-container
+            i(class="icon-reply")
+
+  +notification-sidebar

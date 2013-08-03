@@ -11,11 +11,22 @@ app.use(express.compress());
 app.use(express.static(__dirname + '/static'));
 
 app.get('/', function(reqeust, response) {
-  response.redirect('/task');
+  response.redirect(301, '/task');
 });
 
 app.get('/:type', function(request, response) {
   response.render(request.params.type + '-list', data);
+});
+
+app.get('/:type/:id', function(request, response) {
+  var params = request.params;
+  var type = params.type;
+  var id = params.id;
+  var viewData = {
+    notifications: data.notifications
+  };
+  viewData[type] = data[type + 's'][id];
+  response.render(type + '-detail', viewData);
 });
 
 app.listen(process.env.VCAP_APP_PORT || 3000);
