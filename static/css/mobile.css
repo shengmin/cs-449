@@ -65,9 +65,14 @@ span[class*="icon-"]:after {
 }
 
 /* line 13, ../../sass/mobile.scss */
-.list-row > .content-column > p {
+.list-row > .content-column > h2, .list-row > .content-column > h3, .list-row > .content-column > p {
   text-overflow: ellipsis;
   overflow: hidden;
+}
+
+/* line 18, ../../sass/mobile.scss */
+.list-row > .content-column > h2, .list-row > .content-column > h3 {
+  white-space: nowrap;
 }
 
 /* line 23, ../../sass/mobile.scss */

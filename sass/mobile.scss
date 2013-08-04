@@ -15,7 +15,7 @@
   overflow: hidden;
 }
 
-%one-line-text {
+%single-line-text {
   @extend %multi-line-text;
   white-space: nowrap;
 }
