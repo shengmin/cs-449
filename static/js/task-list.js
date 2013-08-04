@@ -8,7 +8,9 @@ function onContactViewInit() {
             data: cs449.tasks,
             group: { field: 'contact' }
         })
-    })
+    });
+
+    addCheckBoxChange('#contact-view');
 }
 
 function onCategoryViewInit() {
@@ -20,6 +22,8 @@ function onCategoryViewInit() {
             group: { field: 'category' }
         })
     });
+
+    addCheckBoxChange('#category-view');
 }
 
 function onAllViewInit() {
@@ -31,10 +35,21 @@ function onAllViewInit() {
         }),
         click: onListClick,
     });
+    addCheckBoxChange('#all-view');
+}
+
+function addCheckBoxChange(view) {
+    $(view + ' input[type="checkbox"]').change(function() {
+        var size = $(view + ' input[type="checkbox"]:checked').size();
+        $(view + ' #selected-tabstrip').toggle(size > 0);
+        $(view + ' #unselected-tabstrip').toggle(size <= 0);
+    });
 }
 
 function onListClick(e) {
-    window.location = '/task/' + e.dataItem.id;
+    if ($(e.target).closest('.content-column').size()) {
+        window.location = '/task/' + e.dataItem.id;
+    }
 }
 
 function onGroupByPopOverInit(e) {
@@ -44,5 +59,9 @@ function onGroupByPopOverInit(e) {
 }
 
 function onGroupByListClick() {
-    $('#group-by-popover').data('kendoMobilePopOver').close();
+    // $('#group-by-popover').data('kendoMobilePopOver').close();
+}
+
+function onLayoutShow() {
+    $('#selected-tabstrip').hide();
 }

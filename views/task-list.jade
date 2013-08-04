@@ -7,10 +7,12 @@ block body
   div#all-view(data-role="view", data-layout="default-layout", data-init="onAllViewInit")
     ul#all-list
 
-  div(data-role="layout", data-id="default-layout")
+  div(data-role="layout", data-id="")
+
+  div(data-role="layout", data-id="default-layout", data-show="onLayoutShow")
     div#group-by-popover(data-role="popover", data-popup="{ height: '12em' }")
       div(data-role="view", data-init="onGroupByPopOverInit")
-        ul(data-role="listview", data-click="onGroupByListClick")
+        ul(data-role="listview")
           li
             label Group By Category
               input(name="group-by-select", type="radio", checked="checked", value="category-view")
@@ -21,18 +23,39 @@ block body
             label View All
               input(name="group-by-select", type="radio", value="all-view")
 
-    div#search-popover(data-role="popover", data-popup="{ height: '8em;' }")
+    div#search-popover(data-role="popover", data-popup="{ width: '32em' }")
       div(data-role="view")
         ul(data-role="listview")
           li
             label Search
               input(type="search")
 
+      div#remind-me-popover(data-role="popover", data-popup="{ height: '16em', width: '32em' }")
+        div(data-role="view")
+          ul(data-role="listview")
+            li
+              label In One Day
+                input(name="remind-me", type="radio")
+            li
+              label In One Week
+                input(name="remind-me", type="radio")
+            li
+              label In One Month
+                input(name="remind-me", type="radio")
+            li
+              label Custom
+                input(name="remind-me", type="date")
+
     footer(data-role="footer")
-      div(data-role="tabstrip")
+      div#unselected-tabstrip(data-role="tabstrip")
         a(data-icon="search", data-rel="popover", href="#search-popover") Search
         a(data-icon="menu", data-rel="popover", href="#group-by-popover") Group By
         a(data-icon="add", href="#add-task-view") Add Task
+      div#selected-tabstrip(data-role="tabstrip")
+        a(data-icon="forward", href="#task-forward-view") Forward
+        a(data-icon="recents", href="#remind-me-popover", data-rel="popover") Remind Me Later
+        a(data-icon="check", href="#") Mark Complete
+
 
 block body-script
   script#list-view-template(type="text/x-kendo-template")

@@ -50,3 +50,6 @@ span[class*="icon-"]:after {
 @include i-class(menu, "\2630");
 @include i-class(message, "\e718");
 @include i-class(reply, "\e712");
+@include i-class(forward, "\27a6");
+@include i-class(archive, "\e738");
+@include i-class(check, "\2713");
