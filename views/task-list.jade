@@ -29,7 +29,7 @@ block body
               input(type="search")
 
       div#remind-me-popover(data-role="popover", data-popup="{ height: '16em', width: '28em' }")
-        div(data-role="view")
+        div(data-role="view", data-init="onRemindMePopOverInit")
           ul(data-role="listview")
             li
               label In One Day

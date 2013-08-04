@@ -56,6 +56,13 @@ function onGroupByPopOverInit(e) {
     });
 }
 
+function onRemindMePopOverInit(e) {
+    $('#remind-me-popover input[type="radio"]').click(function() {
+        $('#remind-me-popover').data('kendoMobilePopOver').close();
+        $(this).prop('checked', false);
+    });
+}
+
 function onLayoutShow() {
     $('#selected-navbar').hide();
 }
