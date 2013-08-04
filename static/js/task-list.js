@@ -39,7 +39,10 @@ function onListClick(e) {
 
 function onGroupByPopOverInit(e) {
     $('input[name=group-by-select]').click(function() {
-        $('#group-by-popover').data('kendoMobilePopOver').close();
         window.location.hash = $(this).val();
     });
+}
+
+function onGroupByListClick() {
+    $('#group-by-popover').data('kendoMobilePopOver').close();
 }
