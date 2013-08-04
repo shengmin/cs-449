@@ -11,9 +11,10 @@ html
     script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
     script(src="//cdn.kendostatic.com/2013.2.716/js/kendo.all.min.js")
     script(src="/js/data.js")
+    script(src="/js/core.js")
     block head-script
   body
     block body
     script.
-      new kendo.mobile.Application(document.body, { skin: 'flat' });
+      var app = new kendo.mobile.Application(document.body, { skin: 'flat' });
     block body-script

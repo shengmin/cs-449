@@ -1,26 +1,34 @@
-extend main-layout
-include mixin/notification-sidebar
-include mixin/header-menu
-block content
-  div.task-detail-view
-    +header-menu([
-      { text: 'Sort By' },
-      { text: 'Remind Me Later' },
-      { text: 'Mark Complete' }
-    ])
-    div.list-title
-      h1.row #{task.name}
-      h2.row #{task.for}
-    div.message-list
-      each message in task.messages
-        div.list-row
-          div.column.icon-container
-            i(class=message.iconClass)
-          div.column.content-column
-            div.header
-              div.from-name #{message.fromName}
-            p.body #{message.content}
-          div.column.icon-container
-            i(class="icon-reply")
+extend kendo-mobile-layout
+include mixin/task-menu
+block body
+  div#message-view(data-role="view", data-layout="default-layout", data-init="onMessageViewInit")
+    ul#message-list
 
-  +notification-sidebar
+  div(data-role="layout", data-id="default-layout", data-show="onLayoutShow")
+    +task-menu
+
+block body-script
+  script.
+    var TASK_ID = #{id};
+  script#list-view-template(type="text/x-kendo-template")
+    div.list-row
+      div.icon-column
+        i(class=['km-icon', 'km-' + "${type}"])
+      div.content-column.clickable(
+        data-role="touch",
+        data-enable-swipe="true",
+        data-tap="onContentColumnTap",
+        data-swipe="onContentColumnSwipe",
+        data-min-x-delta="100",
+        data-message-id="${id}",
+        data-message-type="${type}"
+      )
+        div.group
+          h2.fromName ${fromName}
+          h3.fromId ${fromId}
+        h4 ${date}
+        h4 ${title}
+        p ${content}
+      div.icon-column.clickable
+        i.km-icon.km-reply
+  script(src="/js/task-detail.js")

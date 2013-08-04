@@ -20,6 +20,12 @@
   white-space: nowrap;
 }
 
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .theme-blue {
   background-color: #3395d5;
 }
@@ -44,7 +50,7 @@
     @extend %column;
 
     line-height: $height;
-    width: $height;
+    width: $height * 0.75;
     text-align: center;
     padding: 0;
     margin: 0;
@@ -60,27 +66,46 @@
     @extend %column;
     @include box-flex(1);
 
-    > h2 {
-      // @extend %has-columns;
+    h2 {
       @extend %single-line-text;
       font-size: 14px;
     }
 
-    > h3 {
+    h3 {
       @extend %single-line-text;
       font-size: 12px;
     }
 
-    > p {
+    h4 {
+      @extend %single-line-text;
+      font-size: 10px;
+    }
+
+    p {
       @extend %multi-line-text;
 
       font-size: 12px;
       font-weight: 300;
     }
 
-    > h2, h3, p {
+    h2, h3, h4, p {
       margin: 0;
       padding: 2px;
+    }
+
+    .fromId, .fromName {
+      width: 50%;
+      display: inline-block;
+    }
+
+    .fromId {
+      float: right;
+      text-align: right;
+      font-weight: 300;
+    }
+
+    .fromName {
+      float: left;
     }
   }
 }

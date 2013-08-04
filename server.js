@@ -23,7 +23,8 @@ app.get('/:type/:id', function(request, response) {
   var type = params.type;
   var id = params.id;
   var viewData = {
-    notifications: data.notifications
+    type: type,
+    id: id
   };
   viewData[type] = data[type + 's'][id];
   response.render(type + '-detail', viewData);

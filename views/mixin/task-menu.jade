@@ -1,0 +1,22 @@
+mixin task-menu
+  div#remind-me-popover(data-role="popover", data-popup="{ height: '16em', width: '28em' }")
+    div(data-role="view", data-init="onRemindMePopOverInit")
+      ul(data-role="listview")
+        li
+          label In One Day
+            input(name="remind-me", type="radio")
+        li
+          label In One Week
+            input(name="remind-me", type="radio")
+        li
+          label In One Month
+            input(name="remind-me", type="radio")
+        li
+          label Custom
+            input(name="remind-me", type="date")
+
+  header(data-role="header")
+    div#task-menu(data-role="navbar")
+      a(data-align="left", data-role="button", data-icon="forward", href="#task-forward-view") Forward
+      a(data-align="left", data-role="button", data-icon="recents", href="#remind-me-popover", data-rel="popover") Remind Me Later
+      a#task-menu-mark-complete(data-align="left", data-role="button", data-icon="check") Mark Complete
