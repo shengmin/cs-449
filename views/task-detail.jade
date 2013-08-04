@@ -2,6 +2,9 @@ extend kendo-mobile-layout
 include mixin/task-menu
 block body
   div#message-view(data-role="view", data-layout="default-layout", data-init="onMessageViewInit")
+    ul(data-role="listview", data-style="inset")
+      li #{task.name}
+      li #{task.summary}
     ul#message-list
 
   div#cell-preview-view(data-role="view",  data-show="onCellPreviewViewShow")
@@ -9,6 +12,7 @@ block body
       div(data-role="navbar")
         a(data-role="backbutton", data-align="left") Back
         a(data-role="button", data-align="right", data-icon="cell") Call Back
+        a(data-role="button", data-align="right", data-icon="details") Move
         a(data-role="button", data-align="right", data-icon="trash") Archive
     ul(data-role="listview", data-style="inset")
       li#cell-preview-view-title

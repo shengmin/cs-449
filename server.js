@@ -1,7 +1,7 @@
 'use strict';
 
 var express = require('express');
-var data = require('./node/data');
+var data = require('./static/js/data');
 var app = express();
 
 app.set('views', __dirname + '/views');
