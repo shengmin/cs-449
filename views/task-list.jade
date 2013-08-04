@@ -1,38 +1,38 @@
 extend kendo-mobile-layout
 block body
-  div#category-view(data-role="view", data-layout="layout", data-init="initForm")
-    form
-
-      ul#category-list(data-role="listview")
-        li
-          div.list-row
-            div.icon-column.km-listview-label
-              input(type="checkbox")
-            div.content-column mmm
-            div.icon-column
-              i.icon-mail
-        li
-          label DropDownList
-              select#dropdown2
-  div#settings(data-role="view", data-layout="layout")
-    ul#settings-list(data-role="listview")
-      li Item 1
-        a(data-role="detailbutton", data-style="contactadd", href="#category-view")
-      li Item 2
-      li Item 3
-  div(data-role="layout", data-id="layout")
-    header(data-role="header")
-      div(data-role="navbar")
-        ul(data-role="buttongroup")
-          li By Name
+  div#category-view(data-role="view", data-layout="default-layout", data-init="onCategoryViewInit")
+    ul#category-list
+  div#contact-view(data-role="view", data-layout="default-layout", data-init="onContactViewInit")
+    ul#contact-list
+  div(data-role="layout", data-id="default-layout")
+    div#group-by-popover(data-role="popover", data-popup="{ height: 'auto' }")
+      div(data-role="view", data-init="onGroupByPopOverInit")
+        ul(data-role="listview", data-click="onGroupByPopOverClick")
           li
-            input(type="search")
-          li By Family
+            label Group By Category
+              input(name="group-by-select", type="radio", checked="checked", value="category-view")
+          li
+            label Group By Contact
+              input(name="group-by-select", type="radio", value="contact-view")
+    div#search-popover(data-role="popover", data-popup="{ height: '8em;' }")
+      div(data-role="view")
+        ul(data-role="listview")
+          li
+            label Search
+              input(type="search")
     footer(data-role="footer")
       div(data-role="tabstrip")
-        a(data-icon="home", href="#category-view") Home
-        a(data-icon="settings", href="#settings") settings
-
+        a(data-icon="search", data-rel="popover", href="#search-popover") Search
+        a(data-icon="menu", data-rel="popover", href="#group-by-popover") Group By
+        a(data-icon="add", href="#add-task-view") Add Task
 
 block body-script
-  script(src="/js/task-list.js");
+  script#list-view-template(type="text/x-kendo-template")
+    div.list-row
+      div.icon-column.km-listview-label
+        input(type="checkbox")
+      div.content-column.clickable
+        h2.header ${name}
+        h2.header ${date}
+        p.body ${summary}
+  script(src="/js/task-list.js")

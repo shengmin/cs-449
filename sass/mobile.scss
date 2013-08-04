@@ -20,6 +20,10 @@
   white-space: nowrap;
 }
 
+.clickable {
+  cursor: pointer;
+}
+
 .list-row {
   $height: 80px;
   $border-color: #999;
@@ -32,22 +36,19 @@
     height: 100%;
   }
 
-  > .button-column {
-    line-height: $height;
-    height: $height;
-    width: $height;
-    text-align: center;
-  }
-
   > .icon-column {
     @extend %column;
 
     line-height: $height;
     width: $height;
     text-align: center;
+    padding: 0;
+    margin: 0;
+    position: static;
 
     input[type="checkbox"] {
       position: static;
+      margin: 0;
     }
   }
 
@@ -56,10 +57,9 @@
     @include box-flex(1);
 
     > .header {
-      @extend %has-columns;
+      // @extend %has-columns;
+      @extend %single-line-text;
       font-size: 14px;
-      height: 35px;
-      line-height: 35px;
     }
 
     > .body {
@@ -67,7 +67,6 @@
 
       font-size: 12px;
       font-weight: 300;
-      line-height: 14px;
     }
   }
 }

@@ -1,19 +1,7 @@
 @charset "UTF-8";
 @import url(//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
-/* line 27, ../../sass/_fonts.scss */
-i[class*="icon-"] {
-  display: inline;
-  width: auto;
-  height: auto;
-  line-height: inherit;
-  vertical-align: baseline;
-  background-image: none;
-  background-position: 0 0;
-  background-repeat: repeat;
-}
-
-/* line 38, ../../sass/_fonts.scss */
-i[class*="icon-"]:before {
+/* line 39, ../../sass/_fonts.scss */
+span[class*="icon-"]:after {
   font-family: "entypo";
   font-weight: normal;
   font-style: normal;
@@ -29,37 +17,43 @@ i[class*="icon-"]:before {
 }
 
 /* line 9, ../../sass/_fonts.scss */
-.icon-mail:before {
+.km-mail:after {
   content: "\2709";
+  font-family: "entypo";
 }
 
 /* line 9, ../../sass/_fonts.scss */
-.icon-phone:before {
+.km-phone:after {
   content: "📞";
+  font-family: "entypo";
 }
 
 /* line 9, ../../sass/_fonts.scss */
-.icon-bbm:before {
+.km-bbm:after {
   content: "\f354";
+  font-family: "entypo";
 }
 
 /* line 9, ../../sass/_fonts.scss */
-.icon-menu:before {
+.km-menu:after {
   content: "\2630";
+  font-family: "entypo";
 }
 
 /* line 9, ../../sass/_fonts.scss */
-.icon-message:before {
+.km-message:after {
   content: "\e718";
+  font-family: "entypo";
 }
 
 /* line 9, ../../sass/_fonts.scss */
-.icon-reply:before {
+.km-reply:after {
   content: "\e712";
+  font-family: "entypo";
 }
 
 /* line 8, ../../sass/mobile.scss */
-.list-row, .list-row > .content-column > .header {
+.list-row {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-box;
@@ -77,46 +71,45 @@ i[class*="icon-"]:before {
 }
 
 /* line 23, ../../sass/mobile.scss */
+.clickable {
+  cursor: pointer;
+}
+
+/* line 27, ../../sass/mobile.scss */
 .list-row {
   height: 80px;
 }
-/* line 31, ../../sass/mobile.scss */
+/* line 35, ../../sass/mobile.scss */
 .list-row > .icon-column, .list-row > .content-column {
   height: 100%;
 }
-/* line 35, ../../sass/mobile.scss */
-.list-row > .button-column {
-  line-height: 80px;
-  height: 80px;
-  width: 80px;
-  text-align: center;
-}
-/* line 42, ../../sass/mobile.scss */
+/* line 39, ../../sass/mobile.scss */
 .list-row > .icon-column {
   line-height: 80px;
   width: 80px;
   text-align: center;
+  padding: 0;
+  margin: 0;
+  position: static;
 }
 /* line 49, ../../sass/mobile.scss */
 .list-row > .icon-column input[type="checkbox"] {
   position: static;
+  margin: 0;
 }
-/* line 54, ../../sass/mobile.scss */
+/* line 55, ../../sass/mobile.scss */
 .list-row > .content-column {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -ms-box-flex: 1;
   box-flex: 1;
 }
-/* line 58, ../../sass/mobile.scss */
+/* line 59, ../../sass/mobile.scss */
 .list-row > .content-column > .header {
   font-size: 14px;
-  height: 35px;
-  line-height: 35px;
 }
 /* line 65, ../../sass/mobile.scss */
 .list-row > .content-column > .body {
   font-size: 12px;
   font-weight: 300;
-  line-height: 14px;
 }

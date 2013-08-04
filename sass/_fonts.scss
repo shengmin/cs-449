@@ -3,11 +3,12 @@
 
 $fontFileName: "../fonts/entypo";
 $fontName: "entypo";
-$classPrefix: "icon-";
+$classPrefix: "km-";
 
 @mixin i-class($name,$pua) {
-  .#{$classPrefix}#{$name}:before {
+  .#{$classPrefix}#{$name}:after, {
     content: "#{$pua}";
+    font-family: $fontName;
   }
 }
 
@@ -24,18 +25,18 @@ $classPrefix: "icon-";
   }
 }
 
-i[class*="icon-"] {
-  display: inline;
-  width: auto;
-  height: auto;
-  line-height: inherit;
-  vertical-align: baseline;
-  background-image: none;
-  background-position: 0 0;
-  background-repeat: repeat;
-}
+// span[class*="icon-"] {
+//   display: inline;
+//   width: auto;
+//   height: auto;
+//   line-height: inherit;
+//   vertical-align: baseline;
+//   background-image: none;
+//   background-position: 0 0;
+//   background-repeat: repeat;
+// }
 
-i[class*="icon-"]:before {
+span[class*="icon-"]:after {
   font-family: $fontName;
   font-weight: normal;
   font-style: normal;

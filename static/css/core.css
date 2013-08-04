@@ -65,20 +65,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 27, ../../sass/_fonts.scss */
-i[class*="icon-"] {
-  display: inline;
-  width: auto;
-  height: auto;
-  line-height: inherit;
-  vertical-align: baseline;
-  background-image: none;
-  background-position: 0 0;
-  background-repeat: repeat;
-}
-
-/* line 38, ../../sass/_fonts.scss */
-i[class*="icon-"]:before {
+/* line 39, ../../sass/_fonts.scss */
+span[class*="icon-"]:after {
   font-family: "entypo";
   font-weight: normal;
   font-style: normal;
@@ -94,33 +82,39 @@ i[class*="icon-"]:before {
 }
 
 /* line 9, ../../sass/_fonts.scss */
-.icon-mail:before {
+.km-mail:after {
   content: "\2709";
+  font-family: "entypo";
 }
 
 /* line 9, ../../sass/_fonts.scss */
-.icon-phone:before {
+.km-phone:after {
   content: "📞";
+  font-family: "entypo";
 }
 
 /* line 9, ../../sass/_fonts.scss */
-.icon-bbm:before {
+.km-bbm:after {
   content: "\f354";
+  font-family: "entypo";
 }
 
 /* line 9, ../../sass/_fonts.scss */
-.icon-menu:before {
+.km-menu:after {
   content: "\2630";
+  font-family: "entypo";
 }
 
 /* line 9, ../../sass/_fonts.scss */
-.icon-message:before {
+.km-message:after {
   content: "\e718";
+  font-family: "entypo";
 }
 
 /* line 9, ../../sass/_fonts.scss */
-.icon-reply:before {
+.km-reply:after {
   content: "\e712";
+  font-family: "entypo";
 }
 
 /* line 9, ../../sass/_base.scss */
