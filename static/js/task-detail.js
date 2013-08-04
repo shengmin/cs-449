@@ -39,8 +39,14 @@ function onContentColumnTap(e) {
     app.navigate(url);
 }
 
-function onCellPreviewViewShow(e) {
+function onCellPreviewViewShow() {
   $('#cell-preview-view-title').html(MESSAGE.title);
   $('#cell-preview-view-content').html(MESSAGE.content);
-  $('#cell-preview-view-from').html(MESSAGE.fromName);
+  $('#cell-preview-view-from').html(MESSAGE.fromName + ' - ' + MESSAGE.fromId);
+}
+
+function onMailPreviewViewShow() {
+  $('#mail-preview-view-title').html(MESSAGE.title);
+  $('#mail-preview-view-content').html(MESSAGE.content);
+  $('#mail-preview-view-from').html(MESSAGE.fromName + ' - ' + MESSAGE.fromId);
 }

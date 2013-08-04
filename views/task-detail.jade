@@ -18,7 +18,20 @@ block body
       div(data-role="navbar")
         ul(data-role="buttongroup")
           li(data-icon="play") Play
+          li(data-icon="fastforward") Fast Forward
           li(data-icon="rewind") Rewind
+
+  div#mail-preview-view(data-role="view",  data-show="onMailPreviewViewShow")
+    header(data-role="header")
+      div(data-role="navbar")
+        a(data-role="backbutton", data-align="left") Back
+        a(data-role="button", data-align="right", data-icon="reply") Reply
+        a(data-role="button", data-align="right", data-icon="details") Move
+        a(data-role="button", data-align="right", data-icon="trash") Delete
+    ul(data-role="listview", data-style="inset")
+      li#mail-preview-view-title
+      li#mail-preview-view-from
+      li#mail-preview-view-content
 
   div(data-role="layout", data-id="default-layout")
     +task-menu
