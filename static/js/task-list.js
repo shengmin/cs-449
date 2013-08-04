@@ -3,6 +3,7 @@ var listViewTemplate = $('#list-view-template').html();
 function onContactViewInit() {
     $('#contact-list').kendoMobileListView({
         template: listViewTemplate,
+        fixedHeaders: true,
         dataSource: kendo.data.DataSource.create({
             data: cs449.tasks,
             group: { field: 'contact' }
@@ -15,6 +16,7 @@ function onContactViewInit() {
 function onCategoryViewInit() {
     $('#category-list').kendoMobileListView({
         template: listViewTemplate,
+        fixedHeaders: true,
         dataSource: kendo.data.DataSource.create({
             data: cs449.tasks,
             group: { field: 'category' }

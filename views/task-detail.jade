@@ -4,7 +4,23 @@ block body
   div#message-view(data-role="view", data-layout="default-layout", data-init="onMessageViewInit")
     ul#message-list
 
-  div(data-role="layout", data-id="default-layout", data-show="onLayoutShow")
+  div#cell-preview-view(data-role="view",  data-show="onCellPreviewViewShow")
+    header(data-role="header")
+      div(data-role="navbar")
+        a(data-role="backbutton", data-align="left") Back
+        a(data-role="button", data-align="right", data-icon="cell") Call Back
+        a(data-role="button", data-align="right", data-icon="trash") Archive
+    ul(data-role="listview", data-style="inset")
+      li#cell-preview-view-title
+      li#cell-preview-view-from
+      li#cell-preview-view-content
+    footer(data-role="footer")
+      div(data-role="navbar")
+        ul(data-role="buttongroup")
+          li(data-icon="play") Play
+          li(data-icon="rewind") Rewind
+
+  div(data-role="layout", data-id="default-layout")
     +task-menu
 
 block body-script
@@ -13,15 +29,13 @@ block body-script
   script#list-view-template(type="text/x-kendo-template")
     div.list-row
       div.icon-column
-        i(class=['km-icon', 'km-' + "${type}"])
+          i(class=['km-icon', 'km-' + "${type}"])
       div.content-column.clickable(
         data-role="touch",
         data-enable-swipe="true",
         data-tap="onContentColumnTap",
         data-swipe="onContentColumnSwipe",
-        data-min-x-delta="100",
-        data-message-id="${id}",
-        data-message-type="${type}"
+        data-min-x-delta="100"
       )
         div.group
           h2.fromName ${fromName}

@@ -19,4 +19,4 @@ mixin task-menu
     div#task-menu(data-role="navbar")
       a(data-align="left", data-role="button", data-icon="forward", href="#task-forward-view") Forward
       a(data-align="left", data-role="button", data-icon="recents", href="#remind-me-popover", data-rel="popover") Remind Me Later
-      a#task-menu-mark-complete(data-align="left", data-role="button", data-icon="check") Mark Complete
+      a#task-menu-mark-complete(data-click="onMenuMarkCompleteClick", data-align="left", data-role="button", data-icon="check") Mark Complete

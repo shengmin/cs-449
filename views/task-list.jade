@@ -23,10 +23,10 @@ block body
 
     div#search-popover(data-role="popover", data-popup="{ width: '28em', height: '8em' }")
       div(data-role="view")
-        ul(data-role="listview")
+        ul(data-role="listview", data-style="inset")
           li
-            label Search
-              input(type="search")
+            label(for="search-input") Search:
+            input#search-input(type="search")
 
       div#remind-me-popover(data-role="popover", data-popup="{ height: '16em', width: '28em' }")
         div(data-role="view", data-init="onRemindMePopOverInit")

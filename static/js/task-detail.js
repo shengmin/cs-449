@@ -1,6 +1,7 @@
 'use strict';
 
 var TASK = cs449.tasks[TASK_ID];
+var MESSAGE = null;
 var listViewTemplate = $('#list-view-template').html();
 
 function onMessageViewInit() {
@@ -12,10 +13,8 @@ function onMessageViewInit() {
   });
 }
 
-function onLayoutShow() {
-  $('#task-menu-mark-complete').click(function() {
-    window.location = '/task';
-  });
+function onMenuMarkCompleteClick() {
+  window.location = '/task';
 }
 
 function onContentColumnSwipe(e) {
@@ -24,9 +23,9 @@ function onContentColumnSwipe(e) {
 }
 
 function onContentColumnTap(e) {
-    var element = $(e.touch.target).closest('.content-column');
-    var id = element.attr('data-message-id');
-    var type = element.attr('data-message-type');
+    var model = getDataSourceAndModel(e).model;
+    var id = model.id;
+    var type = model.type;
     var url = '';
     switch(type) {
       case 'mail':
@@ -36,5 +35,12 @@ function onContentColumnTap(e) {
         url = '#cell-preview-view';
         break;
     }
+    MESSAGE = model;
     app.navigate(url);
+}
+
+function onCellPreviewViewShow(e) {
+  $('#cell-preview-view-title').html(MESSAGE.title);
+  $('#cell-preview-view-content').html(MESSAGE.content);
+  $('#cell-preview-view-from').html(MESSAGE.fromName);
 }

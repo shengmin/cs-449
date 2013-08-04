@@ -126,53 +126,54 @@ span[class*="icon-"]:after {
   padding: 0;
   margin: 0;
   position: static;
+  font-size: 24px;
 }
-/* line 59, ../../sass/mobile.scss */
+/* line 60, ../../sass/mobile.scss */
 .list-row > .icon-column input[type="checkbox"] {
   position: static;
   margin: 0;
 }
-/* line 65, ../../sass/mobile.scss */
+/* line 66, ../../sass/mobile.scss */
 .list-row > .content-column {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -ms-box-flex: 1;
   box-flex: 1;
 }
-/* line 69, ../../sass/mobile.scss */
+/* line 70, ../../sass/mobile.scss */
 .list-row > .content-column h2 {
   font-size: 14px;
 }
-/* line 74, ../../sass/mobile.scss */
+/* line 75, ../../sass/mobile.scss */
 .list-row > .content-column h3 {
   font-size: 12px;
 }
-/* line 79, ../../sass/mobile.scss */
+/* line 80, ../../sass/mobile.scss */
 .list-row > .content-column h4 {
   font-size: 10px;
 }
-/* line 84, ../../sass/mobile.scss */
+/* line 85, ../../sass/mobile.scss */
 .list-row > .content-column p {
   font-size: 12px;
   font-weight: 300;
 }
-/* line 91, ../../sass/mobile.scss */
+/* line 92, ../../sass/mobile.scss */
 .list-row > .content-column h2, .list-row > .content-column h3, .list-row > .content-column h4, .list-row > .content-column p {
   margin: 0;
   padding: 2px;
 }
-/* line 96, ../../sass/mobile.scss */
+/* line 97, ../../sass/mobile.scss */
 .list-row > .content-column .fromId, .list-row > .content-column .fromName {
   width: 50%;
   display: inline-block;
 }
-/* line 101, ../../sass/mobile.scss */
+/* line 102, ../../sass/mobile.scss */
 .list-row > .content-column .fromId {
   float: right;
   text-align: right;
   font-weight: 300;
 }
-/* line 107, ../../sass/mobile.scss */
+/* line 108, ../../sass/mobile.scss */
 .list-row > .content-column .fromName {
   float: left;
 }
