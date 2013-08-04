@@ -7,8 +7,6 @@ block body
   div#all-view(data-role="view", data-layout="default-layout", data-init="onAllViewInit")
     ul#all-list
 
-  div(data-role="layout", data-id="")
-
   div(data-role="layout", data-id="default-layout", data-show="onLayoutShow")
     div#group-by-popover(data-role="popover", data-popup="{ height: '12em' }")
       div(data-role="view", data-init="onGroupByPopOverInit")
@@ -23,14 +21,14 @@ block body
             label View All
               input(name="group-by-select", type="radio", value="all-view")
 
-    div#search-popover(data-role="popover", data-popup="{ width: '32em' }")
+    div#search-popover(data-role="popover", data-popup="{ width: '28em', height: '8em' }")
       div(data-role="view")
         ul(data-role="listview")
           li
             label Search
               input(type="search")
 
-      div#remind-me-popover(data-role="popover", data-popup="{ height: '16em', width: '32em' }")
+      div#remind-me-popover(data-role="popover", data-popup="{ height: '16em', width: '28em' }")
         div(data-role="view")
           ul(data-role="listview")
             li
@@ -46,23 +44,29 @@ block body
               label Custom
                 input(name="remind-me", type="date")
 
-    footer(data-role="footer")
-      div#unselected-tabstrip(data-role="tabstrip")
-        a(data-icon="search", data-rel="popover", href="#search-popover") Search
-        a(data-icon="menu", data-rel="popover", href="#group-by-popover") Group By
-        a(data-icon="add", href="#add-task-view") Add Task
-      div#selected-tabstrip(data-role="tabstrip")
-        a(data-icon="forward", href="#task-forward-view") Forward
-        a(data-icon="recents", href="#remind-me-popover", data-rel="popover") Remind Me Later
-        a(data-icon="check", href="#") Mark Complete
-
+    header(data-role="header")
+      div#unselected-navbar(data-role="navbar")
+        a(data-align="left", data-role="button", data-icon="search", data-rel="popover", href="#search-popover") Search
+        a(data-align="left", data-role="button", data-icon="menu", data-rel="popover", href="#group-by-popover") Group By
+        a(data-align="left", data-role="button", data-icon="add", href="#add-task-view") Add Task
+      div#selected-navbar(data-role="navbar")
+        a(data-align="left", data-role="button", data-icon="forward", href="#task-forward-view") Forward
+        a(data-align="left", data-role="button", data-icon="recents", href="#remind-me-popover", data-rel="popover") Remind Me Later
+        a(data-align="left", data-role="button", data-icon="check", href="#") Mark Complete
 
 block body-script
   script#list-view-template(type="text/x-kendo-template")
     div.list-row
       div.icon-column.km-listview-label
         input(type="checkbox")
-      div.content-column.clickable
+      div.content-column.clickable(
+        data-role="touch",
+        data-enable-swipe="true",
+        data-tap="onContentColumnTap",
+        data-swipe="onContentColumnSwipe",
+        data-min-x-delta="100",
+        data-task-id="${id}"
+      )
         h2 ${name}
         h3 ${date}
         p ${summary}

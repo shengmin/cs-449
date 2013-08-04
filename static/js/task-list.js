@@ -3,7 +3,6 @@ var listViewTemplate = $('#list-view-template').html();
 function onContactViewInit() {
     $('#contact-list').kendoMobileListView({
         template: listViewTemplate,
-        click: onListClick,
         dataSource: kendo.data.DataSource.create({
             data: cs449.tasks,
             group: { field: 'contact' }
@@ -16,7 +15,6 @@ function onContactViewInit() {
 function onCategoryViewInit() {
     $('#category-list').kendoMobileListView({
         template: listViewTemplate,
-        click: onListClick,
         dataSource: kendo.data.DataSource.create({
             data: cs449.tasks,
             group: { field: 'category' }
@@ -32,8 +30,7 @@ function onAllViewInit() {
         dataSource: kendo.data.DataSource.create({
             data: cs449.tasks,
             sort: { field: 'timestamp', dir: 'desc' }
-        }),
-        click: onListClick,
+        })
     });
     addCheckBoxChange('#all-view');
 }
@@ -41,8 +38,8 @@ function onAllViewInit() {
 function addCheckBoxChange(view) {
     $(view + ' input[type="checkbox"]').change(function() {
         var size = $(view + ' input[type="checkbox"]:checked').size();
-        $(view + ' #selected-tabstrip').toggle(size > 0);
-        $(view + ' #unselected-tabstrip').toggle(size <= 0);
+        $(view + ' #selected-navbar').toggle(size > 0);
+        $(view + ' #unselected-navbar').toggle(size <= 0);
     });
 }
 
@@ -55,13 +52,22 @@ function onListClick(e) {
 function onGroupByPopOverInit(e) {
     $('input[name=group-by-select]').click(function() {
         window.location.hash = $(this).val();
+        $('#group-by-popover').data('kendoMobilePopOver').close();
     });
 }
 
-function onGroupByListClick() {
-    // $('#group-by-popover').data('kendoMobilePopOver').close();
+function onLayoutShow() {
+    $('#selected-navbar').hide();
 }
 
-function onLayoutShow() {
-    $('#selected-tabstrip').hide();
+function onContentColumnSwipe(e) {
+    var list = $(e.touch.target).closest('.km-listview').data('kendoMobileListView');
+    var dataSource = list.dataSource;
+    var model = dataSource.getByUid($(e.touch.target).closest('li').attr("data-uid"));
+    dataSource.remove(model);
+}
+
+function onContentColumnTap(e) {
+    var id = $(e.touch.target).closest('.content-column').attr('data-task-id');
+    window.location = '/task/' + id;
 }

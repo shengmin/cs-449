@@ -23,7 +23,7 @@ span[class*="icon-"]:after {
 }
 
 /* line 9, ../../sass/_fonts.scss */
-.km-phone:after {
+.km-cell:after {
   content: "📞";
   font-family: "entypo";
 }

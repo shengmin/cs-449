@@ -45,7 +45,7 @@ span[class*="icon-"]:after {
 
 @include face;
 @include i-class(mail, "\2709");
-@include i-class(phone, 📞);
+@include i-class(cell, 📞);
 @include i-class(bbm, "\f354");
 @include i-class(menu, "\2630");
 @include i-class(message, "\e718");
