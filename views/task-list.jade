@@ -1,14 +1,38 @@
 extend kendo-mobile-layout
 block body
-  div#index(data-role="view", data-title="View")
+  div#category-view(data-role="view", data-layout="layout", data-init="initForm")
+    form
+
+      ul#category-list(data-role="listview")
+        li
+          div.list-row
+            div.icon-column.km-listview-label
+              input(type="checkbox")
+            div.content-column mmm
+            div.icon-column
+              i.icon-mail
+        li
+          label DropDownList
+              select#dropdown2
+  div#settings(data-role="view", data-layout="layout")
+    ul#settings-list(data-role="listview")
+      li Item 1
+        a(data-role="detailbutton", data-style="contactadd", href="#category-view")
+      li Item 2
+      li Item 3
+  div(data-role="layout", data-id="layout")
     header(data-role="header")
       div(data-role="navbar")
-        span(data-role="view-title")
-    ul(data-role="listview")
-      li Item 1
-      li Item 2
+        ul(data-role="buttongroup")
+          li By Name
+          li
+            input(type="search")
+          li By Family
     footer(data-role="footer")
       div(data-role="tabstrip")
-        a(data-icon="home", href="#index") Home
+        a(data-icon="home", href="#category-view") Home
         a(data-icon="settings", href="#settings") settings
 
+
+block body-script
+  script(src="/js/task-list.js");
