@@ -4,8 +4,11 @@ block body
     ul#category-list
   div#contact-view(data-role="view", data-layout="default-layout", data-init="onContactViewInit")
     ul#contact-list
+  div#all-view(data-role="view", data-layout="default-layout", data-init="onAllViewInit")
+    ul#all-list
+
   div(data-role="layout", data-id="default-layout")
-    div#group-by-popover(data-role="popover", data-popup="{ height: 'auto' }")
+    div#group-by-popover(data-role="popover", data-popup="{ height: '12em' }")
       div(data-role="view", data-init="onGroupByPopOverInit")
         ul(data-role="listview", data-click="onGroupByPopOverClick")
           li
@@ -14,12 +17,17 @@ block body
           li
             label Group By Contact
               input(name="group-by-select", type="radio", value="contact-view")
+          li
+            label View All
+              input(name="group-by-select", type="radio", value="all-view")
+
     div#search-popover(data-role="popover", data-popup="{ height: '8em;' }")
       div(data-role="view")
         ul(data-role="listview")
           li
             label Search
               input(type="search")
+
     footer(data-role="footer")
       div(data-role="tabstrip")
         a(data-icon="search", data-rel="popover", href="#search-popover") Search
@@ -32,7 +40,7 @@ block body-script
       div.icon-column.km-listview-label
         input(type="checkbox")
       div.content-column.clickable
-        h2.header ${name}
-        h2.header ${date}
-        p.body ${summary}
+        h2 ${name}
+        h3 ${date}
+        p ${summary}
   script(src="/js/task-list.js")

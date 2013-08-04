@@ -7,12 +7,29 @@ var cs449 = {};
   var CAT_WAITING = '2 - Waiting on Others';
   var CAT_EVERYTHING_ELSE = '3 - Everything Else';
 
-  cs449.tasks = [
+  function addId(tasks) {
+    for (var i = 0, len = tasks.length; i < len; i++) {
+      tasks[i].id = i;
+    }
+    return tasks;
+  }
+
+  function addDate(tasks) {
+    for (var i = 0, len = tasks.length; i < len; i++) {
+      var task = tasks[i];
+      var date = new Date(task.timestamp);
+      tasks[i].date = date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+    }
+    return tasks;
+  }
+
+  var tasks = cs449.tasks = [
     {
       category: CAT_PRIORITY,
       name: 'Task 1',
       contact: 'ShengMin Zhang',
       summary: 'summary1',
+      timestamp: 1375629578449,
       date: 'July 19, 2013',
       messages: [
         {
@@ -47,6 +64,7 @@ var cs449 = {};
       contact: 'ShengMin Zhang',
       summary: 'summary2',
       date: 'July 19, 2013',
+      timestamp: 1375629578449,
       messages: [
         {
           iconClass: 'icon-phone',
@@ -63,6 +81,7 @@ var cs449 = {};
       contact: 'ShengMin Zhang',
       summary: 'summary2',
       date: 'July 19, 2013',
+      timestamp: 1375629578449,
       messages: [
         {
           iconClass: 'icon-phone',
@@ -79,6 +98,7 @@ var cs449 = {};
       contact: 'ShengMin Zhang',
       summary: 'summary2',
       date: 'July 19, 2013',
+      timestamp: 1375629578449,
       messages: [
         {
           iconClass: 'icon-phone',
@@ -90,6 +110,9 @@ var cs449 = {};
       ]
     }
   ];
+
+  addId(addDate(tasks));
+
 })();
 
 

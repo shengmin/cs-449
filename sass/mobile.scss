@@ -56,17 +56,27 @@
     @extend %column;
     @include box-flex(1);
 
-    > .header {
+    > h2 {
       // @extend %has-columns;
       @extend %single-line-text;
       font-size: 14px;
     }
 
-    > .body {
+    > h3 {
+      @extend %single-line-text;
+      font-size: 12px;
+    }
+
+    > p {
       @extend %multi-line-text;
 
       font-size: 12px;
       font-weight: 300;
+    }
+
+    > h2, h3, p {
+      margin: 0;
+      padding: 2px;
     }
   }
 }

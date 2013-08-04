@@ -65,7 +65,7 @@ span[class*="icon-"]:after {
 }
 
 /* line 13, ../../sass/mobile.scss */
-.list-row > .content-column > .body {
+.list-row > .content-column > p {
   text-overflow: ellipsis;
   overflow: hidden;
 }
@@ -105,11 +105,20 @@ span[class*="icon-"]:after {
   box-flex: 1;
 }
 /* line 59, ../../sass/mobile.scss */
-.list-row > .content-column > .header {
+.list-row > .content-column > h2 {
   font-size: 14px;
 }
 /* line 65, ../../sass/mobile.scss */
-.list-row > .content-column > .body {
+.list-row > .content-column > h3 {
+  font-size: 12px;
+}
+/* line 70, ../../sass/mobile.scss */
+.list-row > .content-column > p {
   font-size: 12px;
   font-weight: 300;
+}
+/* line 77, ../../sass/mobile.scss */
+.list-row > .content-column > h2, .list-row > .content-column h3, .list-row > .content-column p {
+  margin: 0;
+  padding: 2px;
 }
