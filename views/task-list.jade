@@ -1,4 +1,14 @@
-extend main-layout
-include mixin/notification-sidebar
-block content
-  +notification-sidebar
+extend kendo-mobile-layout
+block body
+  div#index(data-role="view", data-title="View")
+    header(data-role="header")
+      div(data-role="navbar")
+        span(data-role="view-title")
+    ul(data-role="listview")
+      li Item 1
+      li Item 2
+    footer(data-role="footer")
+      div(data-role="tabstrip")
+        a(data-icon="home", href="#index") Home
+        a(data-icon="settings", href="#settings") settings
+

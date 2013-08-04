@@ -3,11 +3,16 @@ html
   head(lang="en")
     title Task Hub
     meta(name="viewport", content="width=device-width, initial-scale=1")
-    link(rel="stylesheet", href="//cdn.kendostatic.com/2013.1.319/styles/kendo.mobile.all.min.css")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    link(rel="stylesheet", href="//cdn.kendostatic.com/2013.2.716/styles/kendo.common.min.css")
+    link(rel="stylesheet", href="//cdn.kendostatic.com/2013.2.716/styles/kendo.mobile.all.min.css")
     block stylesheet
     script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
-    script(src="//cdn.kendostatic.com/2013.1.319/js/kendo.mobile.min.js")
+    script(src="//cdn.kendostatic.com/2013.2.716/js/kendo.mobile.min.js")
     block head-script
   body
     block body
     block body-script
+    script.
+      new kendo.mobile.Application(document.body, { skin: 'flat' });
+
