@@ -5,6 +5,12 @@
 @import "compass/css3/images";
 @import "fonts";
 
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
 %has-columns {
   @include display-box;
   @include box-align(stretch);
@@ -20,6 +26,16 @@
   white-space: nowrap;
 }
 
+#device-wrapper {
+  background-image: url("../images/device-wrapper.png");
+  box-sizing: border-box;
+  padding: 190px 47px 168px 41px;
+  width: 557px;
+  height: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
 .group:after {
   content: "";
   display: table;
@@ -30,9 +46,15 @@
   background-color: #3395d5;
 }
 
-.message-indicator {
+#notification-indicator {
   @include transition-property(color);
   @include transition-duration(1s);
+
+  position: absolute;
+  top: 95px;
+  left: 480px;
+  color: #f00;
+  font-size: 24px;
 }
 
 .badge {

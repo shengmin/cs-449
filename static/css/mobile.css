@@ -88,7 +88,20 @@ span[class*="icon-"]:after {
   font-family: "entypo";
 }
 
+/* line 9, ../../sass/_fonts.scss */
+.km-circle:after {
+  content: "\26ab";
+  font-family: "entypo";
+}
+
 /* line 8, ../../sass/mobile.scss */
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+/* line 14, ../../sass/mobile.scss */
 .list-row {
   display: -webkit-box;
   display: -moz-box;
@@ -100,31 +113,42 @@ span[class*="icon-"]:after {
   box-align: stretch;
 }
 
-/* line 13, ../../sass/mobile.scss */
+/* line 19, ../../sass/mobile.scss */
 .list-row > .content-column h2, .list-row > .content-column h3, .list-row > .content-column h4, .list-row > .content-column p {
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
-/* line 18, ../../sass/mobile.scss */
+/* line 24, ../../sass/mobile.scss */
 .list-row > .content-column h2, .list-row > .content-column h3, .list-row > .content-column h4 {
   white-space: nowrap;
 }
 
-/* line 23, ../../sass/mobile.scss */
+/* line 29, ../../sass/mobile.scss */
+#device-wrapper {
+  background-image: url("../images/device-wrapper.png");
+  box-sizing: border-box;
+  padding: 190px 47px 168px 41px;
+  width: 557px;
+  height: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* line 39, ../../sass/mobile.scss */
 .group:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* line 29, ../../sass/mobile.scss */
+/* line 45, ../../sass/mobile.scss */
 .theme-blue {
   background-color: #3395d5;
 }
 
-/* line 33, ../../sass/mobile.scss */
-.message-indicator {
+/* line 49, ../../sass/mobile.scss */
+#notification-indicator {
   -webkit-transition-property: color;
   -moz-transition-property: color;
   -o-transition-property: color;
@@ -133,9 +157,14 @@ span[class*="icon-"]:after {
   -moz-transition-duration: 1s;
   -o-transition-duration: 1s;
   transition-duration: 1s;
+  position: absolute;
+  top: 95px;
+  left: 480px;
+  color: #f00;
+  font-size: 24px;
 }
 
-/* line 38, ../../sass/mobile.scss */
+/* line 60, ../../sass/mobile.scss */
 .badge {
   display: block;
   float: right;
@@ -143,20 +172,20 @@ span[class*="icon-"]:after {
   font-weight: bold;
 }
 
-/* line 45, ../../sass/mobile.scss */
+/* line 67, ../../sass/mobile.scss */
 .clickable {
   cursor: pointer;
 }
 
-/* line 49, ../../sass/mobile.scss */
+/* line 71, ../../sass/mobile.scss */
 .list-row {
   height: 80px;
 }
-/* line 57, ../../sass/mobile.scss */
+/* line 79, ../../sass/mobile.scss */
 .list-row > .icon-column, .list-row > .content-column {
   height: 100%;
 }
-/* line 61, ../../sass/mobile.scss */
+/* line 83, ../../sass/mobile.scss */
 .list-row > .icon-column {
   line-height: 80px;
   width: 60px;
@@ -166,52 +195,52 @@ span[class*="icon-"]:after {
   position: static;
   font-size: 24px;
 }
-/* line 72, ../../sass/mobile.scss */
+/* line 94, ../../sass/mobile.scss */
 .list-row > .icon-column input[type="checkbox"] {
   position: static;
   margin: 0;
 }
-/* line 78, ../../sass/mobile.scss */
+/* line 100, ../../sass/mobile.scss */
 .list-row > .content-column {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -ms-box-flex: 1;
   box-flex: 1;
 }
-/* line 82, ../../sass/mobile.scss */
+/* line 104, ../../sass/mobile.scss */
 .list-row > .content-column h2 {
   font-size: 14px;
 }
-/* line 87, ../../sass/mobile.scss */
+/* line 109, ../../sass/mobile.scss */
 .list-row > .content-column h3 {
   font-size: 12px;
 }
-/* line 92, ../../sass/mobile.scss */
+/* line 114, ../../sass/mobile.scss */
 .list-row > .content-column h4 {
   font-size: 10px;
 }
-/* line 97, ../../sass/mobile.scss */
+/* line 119, ../../sass/mobile.scss */
 .list-row > .content-column p {
   font-size: 12px;
   font-weight: 300;
 }
-/* line 104, ../../sass/mobile.scss */
+/* line 126, ../../sass/mobile.scss */
 .list-row > .content-column h2, .list-row > .content-column h3, .list-row > .content-column h4, .list-row > .content-column p {
   margin: 0;
   padding: 2px;
 }
-/* line 109, ../../sass/mobile.scss */
+/* line 131, ../../sass/mobile.scss */
 .list-row > .content-column .fromId, .list-row > .content-column .fromName {
   width: 50%;
   display: inline-block;
 }
-/* line 114, ../../sass/mobile.scss */
+/* line 136, ../../sass/mobile.scss */
 .list-row > .content-column .fromId {
   float: right;
   text-align: right;
   font-weight: 300;
 }
-/* line 120, ../../sass/mobile.scss */
+/* line 142, ../../sass/mobile.scss */
 .list-row > .content-column .fromName {
   float: left;
 }

@@ -14,10 +14,20 @@ html
     script(src="/js/core.js")
     block head-script
   body
-    block body
-    script.
-      var app = new kendo.mobile.Application(document.body, {
-        skin: 'flat',
-        transition: 'slide'
-        });
-    block body-script
+    div#device-wrapper
+      div#notification-indicator
+        i.km-icon.km-circle
+      div#mobile-application-container
+        block body
+        script.
+          var app = new kendo.mobile.Application($('#mobile-application-container'), {
+            skin: 'flat',
+            transition: 'slide'
+          });
+
+          var notificationIndicatorColor = '#f00';
+          setInterval(function() {
+            notificationIndicatorColor = (notificationIndicatorColor == '#f00') ? '#444' : '#f00';
+            $('#notification-indicator').css('color', notificationIndicatorColor);
+          }, 2000);
+        block body-script
