@@ -27,13 +27,6 @@ block body
             label View All
               input(name="group-by-select", type="radio", value="all-view")
 
-    div#search-popover(data-role="popover", data-popup="{ width: '28em', height: '8em' }")
-      div(data-role="view")
-        ul(data-role="listview", data-style="inset")
-          li
-            label(for="search-input") Search:
-            input#search-input(type="search")
-
       div#remind-me-popover(data-role="popover", data-popup="{ height: '16em', width: '28em' }")
         div(data-role="view", data-init="onRemindMePopOverInit")
           ul(data-role="listview")
@@ -53,10 +46,13 @@ block body
     +task-menu
     header#unselected-navbar(data-role="header")
       div(data-role="navbar")
-        a(data-align="left", data-role="button", data-icon="search", data-rel="popover", href="#search-popover") Search
         a(data-align="left", data-role="button", data-icon="menu", data-rel="popover", href="#group-by-popover") Group By
         a(data-align="left", data-role="button", data-icon="add", href="#task-add-view") Add Task
         a.message-indicator(data-align="right", data-role="button", data-icon="about", href="#notification-bar", data-rel="drawer")
+      ul(data-role="listview", data-style="inset")
+        li(data-icon="search")
+          label Search
+            input(type="search")
     footer(data-role="footer")
       div(data-role="navbar")
         ul(data-role="buttongroup", data-select="goHome")
