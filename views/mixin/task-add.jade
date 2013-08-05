@@ -17,11 +17,12 @@ mixin task-add
         label Summary
           textarea(style="resize: none; height: 16em;", placeholder="I lost my cat on Thursday")
       li
-        label Remind Me Every
+        label Remind Me
           select
-            option Day
-            option Week
-            option Month
+            option Once
+            option Every Day
+            option Every Week
+            option Every Month
       li
         label Starting On
           input(type="date")
