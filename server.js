@@ -14,6 +14,10 @@ app.get('/', function(reqeust, response) {
   response.redirect(301, '/task');
 });
 
+app.get('/mixin-test', function(request, response) {
+  response.render('mixin-test');
+});
+
 app.get('/:type', function(request, response) {
   response.render(request.params.type + '-list', data);
 });

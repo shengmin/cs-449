@@ -159,6 +159,12 @@ span[class*="icon-"]:after {
   font-family: "entypo";
 }
 
+/* line 9, ../../sass/_fonts.scss */
+.km-folder:after {
+  content: "📁";
+  font-family: "entypo";
+}
+
 /* line 9, ../../sass/_base.scss */
 .header-menu, .list-row, .list-row > .content-column > .header {
   display: -webkit-box;

@@ -12,8 +12,10 @@ html
     script(src="//cdn.kendostatic.com/2013.2.716/js/kendo.all.min.js")
     script(src="/js/data.js")
     script(src="/js/core.js")
+    script(src="/js/mobile-application.js")
     block head-script
   body
+    i.test-haha
     div#device-wrapper
       div#notification-indicator
         i.km-icon.km-circle
@@ -21,13 +23,12 @@ html
         block body
         script.
           var app = new kendo.mobile.Application($('#mobile-application-container'), {
-            skin: 'flat',
-            transition: 'slide'
+            skin: 'flat'
           });
 
           var notificationIndicatorColor = '#f00';
           setInterval(function() {
             notificationIndicatorColor = (notificationIndicatorColor == '#f00') ? '#444' : '#f00';
-            $('#notification-indicator').css('color', notificationIndicatorColor);
+            //$('#notification-indicator').css('color', notificationIndicatorColor);
           }, 2000);
         block body-script

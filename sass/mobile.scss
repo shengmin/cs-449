@@ -5,10 +5,58 @@
 @import "compass/css3/images";
 @import "fonts";
 
-html, body {
-  padding: 0;
+
+%box-reset {
   margin: 0;
+  padding: 0;
+}
+
+html, body {
+  @extend %box-reset;
   height: 100%;
+}
+
+.km-navbar {
+
+  .km-rightitem {
+    position: static;
+    float: right;
+  }
+
+  .km-leftitem {
+    position: static;
+    float: left;
+  }
+
+  .km-button {
+    @extend %box-reset;
+    line-height: 1;
+    margin: 5px 2px;
+    padding: 5px 10px;
+  }
+}
+
+.km-view-title {
+  line-height: 1;
+
+  h4 {
+    line-height: 2;
+    font-weight: 800;
+  }
+}
+
+.km-button {
+  @extend %box-reset;
+
+  .km-icon {
+    @extend %box-reset;
+
+    margin-right: 5px;
+  }
+
+  .km-text {
+    vertical-align: middle;
+  }
 }
 
 %has-columns {
