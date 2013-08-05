@@ -36,6 +36,10 @@ block body
       li#mail-preview-view-title
       li#mail-preview-view-from
       li#mail-preview-view-content
+    footer(data-role="footer")
+      div(data-role="navbar")
+        ul(data-role="buttongroup", data-select="goHome")
+          li(data-icon="home") Home
   +task-forward(contacts)
   div(data-role="layout", data-id="default-layout")
     +task-menu
