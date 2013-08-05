@@ -2,6 +2,7 @@ extend kendo-mobile-layout
 include mixin/task-menu
 include mixin/task-forward
 include mixin/task-add
+include mixin/notification-bar
 block body
   div#category-view(data-after-show="onViewAfterShow", data-role="view", data-layout="default-layout", data-init="onCategoryViewInit")
     ul#category-list
@@ -11,6 +12,7 @@ block body
     ul#all-list
   +task-forward(contacts)
   +task-add
+  +notification-bar("['category-view', 'contact-view', 'all-view']", "#category-view")
   div(data-role="layout", data-id="default-layout", data-show="onLayoutShow")
     div#group-by-popover(data-role="popover", data-popup="{ height: '12em' }")
       div(data-role="view", data-init="onGroupByPopOverInit")
@@ -54,6 +56,7 @@ block body
         a(data-align="left", data-role="button", data-icon="search", data-rel="popover", href="#search-popover") Search
         a(data-align="left", data-role="button", data-icon="menu", data-rel="popover", href="#group-by-popover") Group By
         a(data-align="left", data-role="button", data-icon="add", href="#task-add-view") Add Task
+        a.message-indicator(data-align="right", data-role="button", data-icon="about", href="#notification-bar", data-rel="drawer")
 
 block body-script
   script#list-view-template(type="text/x-kendo-template")

@@ -30,6 +30,18 @@
   background-color: #3395d5;
 }
 
+.message-indicator {
+  @include transition-property(color);
+  @include transition-duration(1s);
+}
+
+.badge {
+  display: block;
+  float: right;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
 .clickable {
   cursor: pointer;
 }

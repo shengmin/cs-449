@@ -1,0 +1,15 @@
+mixin notification-bar(views, home)
+    div#notification-bar(data-role="drawer", style="width: 270px;", data-views="#{views}")
+        ul(data-role="listview")
+            li(data-icon="facebook")
+                a(href="#") Facebook
+            li(data-icon="twitter")
+                a(href="#") Twitter
+            li(data-icon="mail", data-badge="2")
+                a(href="#") Email
+                    span.badge 2
+            li(data-icon="home", data-badge="4")
+                a(href="#{home}") Task Hub
+                    span.badge 4
+            li(data-icon="bbm")
+                a(href="#") BBM

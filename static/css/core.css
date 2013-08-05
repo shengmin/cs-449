@@ -141,6 +141,18 @@ span[class*="icon-"]:after {
   font-family: "entypo";
 }
 
+/* line 9, ../../sass/_fonts.scss */
+.km-facebook:after {
+  content: "\f30c";
+  font-family: "entypo";
+}
+
+/* line 9, ../../sass/_fonts.scss */
+.km-twitter:after {
+  content: "\f309";
+  font-family: "entypo";
+}
+
 /* line 9, ../../sass/_base.scss */
 .header-menu, .list-row, .list-row > .content-column > .header {
   display: -webkit-box;
