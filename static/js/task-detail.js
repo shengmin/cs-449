@@ -14,7 +14,7 @@ function onMessageViewInit() {
 }
 
 function onMenuMarkCompleteClick() {
-  window.location = '/task';
+  window.location = '/';
 }
 
 function onContentColumnSwipe(e) {

@@ -21,3 +21,7 @@ setInterval(function() {
   messageIndicatorColor = (messageIndicatorColor == '#111') ? '#DE0000' : '#111';
   $('.message-indicator').css('color', messageIndicatorColor);
 }, 2000);
+
+function goHome() {
+  window.location = '/';
+}
