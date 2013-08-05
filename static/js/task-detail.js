@@ -22,6 +22,10 @@ function onContentColumnSwipe(e) {
     result.dataSource.remove(result.model);
 }
 
+function onCreateNewTaskShow() {
+  $("#end-call-view").data("kendoMobileModalView").close();
+}
+
 function onContentColumnTap(e) {
     var model = getDataSourceAndModel(e).model;
     var id = model.id;
@@ -49,4 +53,10 @@ function onMailPreviewViewShow() {
   $('#mail-preview-view-title').html(MESSAGE.title);
   $('#mail-preview-view-content').html(MESSAGE.content);
   $('#mail-preview-view-from').html(MESSAGE.fromName + ' - ' + MESSAGE.fromId);
+}
+
+function onPhoneCallShow() {
+  setTimeout(function() {
+    $("#end-call-view").data("kendoMobileModalView").open();
+  }, 2000);
 }

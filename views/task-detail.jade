@@ -1,12 +1,14 @@
 extend kendo-mobile-layout
 include mixin/task-menu
 include mixin/task-forward
+include mixin/task-add
 block body
   div#message-view(data-role="view", data-layout="default-layout", data-init="onMessageViewInit")
     ul(data-role="listview", data-style="inset")
       li #{task.name}
       li #{task.summary}
     ul#message-list
+  +task-add
   div#cell-preview-view(data-role="view",  data-show="onCellPreviewViewShow")
     header(data-role="header")
       div(data-role="navbar")
@@ -42,7 +44,21 @@ block body
           li(data-icon="home") Home
   +task-forward(contacts)
 
-  div#phone-call(data-role="view")
+  div#end-call-view(data-role="modalview", style="width: 70%; height: 14em")
+    header(data-role="header")
+      div(data-role="navbar")
+        span Call Ended: 519-888-0000
+    ul(data-role="listview")
+      li
+        a(href="#task-add-view", data-role="button") Create New Task
+      li
+        a(href="#", data-role="button") Add to Existing Task
+      li
+        a(href="#", data-role="button") Add to Contacts
+      li
+        a(href="#", data-role="button") Cancel
+
+  div#phone-call(data-role="view", data-show="onPhoneCallShow")
     div(data-role="content")
       img(src="/images/call-screen.jpg", style="width: 100%")
     footer(data-role="footer")

@@ -1,10 +1,12 @@
 mixin task-add
-  div#task-add-view(data-role="view")
+  div#task-add-view(data-role="view", data-show="onCreateNewTaskShow")
     header(data-role="header")
       div(data-role="navbar")
         a(data-role="backbutton", data-align="left", data-icon="arrow-left") Back
     footer(data-role="footer")
       div(data-role="navbar")
+        ul(data-role="buttongroup", data-select="goHome")
+          li(data-icon="home") Home
         a(data-role="backbutton", data-align="left", data-icon="arrow-left") Cancel
         a(data-role="button", data-align="right", data-icon="forward") Add Task
     ul(data-role="listview", data-style="inset")
