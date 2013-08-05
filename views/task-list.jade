@@ -1,12 +1,14 @@
 extend kendo-mobile-layout
+include mixin/task-menu
+include mixin/task-forward
 block body
-  div#category-view(data-role="view", data-layout="default-layout", data-init="onCategoryViewInit")
+  div#category-view(data-after-show="onViewAfterShow", data-role="view", data-layout="default-layout", data-init="onCategoryViewInit")
     ul#category-list
-  div#contact-view(data-role="view", data-layout="default-layout", data-init="onContactViewInit")
+  div#contact-view(data-after-show="onViewAfterShow",data-role="view", data-layout="default-layout", data-init="onContactViewInit")
     ul#contact-list
-  div#all-view(data-role="view", data-layout="default-layout", data-init="onAllViewInit")
+  div#all-view(data-after-show="onViewAfterShow",data-role="view", data-layout="default-layout", data-init="onAllViewInit")
     ul#all-list
-
+  +task-forward(contacts)
   div(data-role="layout", data-id="default-layout", data-show="onLayoutShow")
     div#group-by-popover(data-role="popover", data-popup="{ height: '12em' }")
       div(data-role="view", data-init="onGroupByPopOverInit")
@@ -44,15 +46,12 @@ block body
               label Custom
                 input(name="remind-me", type="date")
 
-    header(data-role="header")
-      div#unselected-navbar(data-role="navbar")
+    +task-menu
+    header#unselected-navbar(data-role="header")
+      div(data-role="navbar")
         a(data-align="left", data-role="button", data-icon="search", data-rel="popover", href="#search-popover") Search
         a(data-align="left", data-role="button", data-icon="menu", data-rel="popover", href="#group-by-popover") Group By
         a(data-align="left", data-role="button", data-icon="add", href="#add-task-view") Add Task
-      div#selected-navbar(data-role="navbar")
-        a(data-align="left", data-role="button", data-icon="forward", href="#task-forward-view") Forward
-        a(data-align="left", data-role="button", data-icon="recents", href="#remind-me-popover", data-rel="popover") Remind Me Later
-        a(data-align="left", data-role="button", data-icon="check", href="#") Mark Complete
 
 block body-script
   script#list-view-template(type="text/x-kendo-template")

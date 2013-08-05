@@ -1,8 +1,0 @@
-mixin header-menu(options)
-  div.header-menu.theme-flat-black
-    each option in options
-      div.option.clickable #{option.text}
-        if option.items
-          div.item-container.theme-flat-grey
-            each item in option.items
-              div.item.clickable #{item.text}

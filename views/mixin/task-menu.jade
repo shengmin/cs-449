@@ -15,8 +15,8 @@ mixin task-menu
           label Custom
             input(name="remind-me", type="date")
 
-  header(data-role="header")
-    div#task-menu(data-role="navbar")
+  header#task-menu(data-role="header")
+    div(data-role="navbar")
       a(data-align="left", data-role="button", data-icon="forward", href="#task-forward-view") Forward
       a(data-align="left", data-role="button", data-icon="recents", href="#remind-me-popover", data-rel="popover") Remind Me Later
       a#task-menu-mark-complete(data-click="onMenuMarkCompleteClick", data-align="left", data-role="button", data-icon="check") Mark Complete

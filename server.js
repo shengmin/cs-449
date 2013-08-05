@@ -24,7 +24,8 @@ app.get('/:type/:id', function(request, response) {
   var id = params.id;
   var viewData = {
     type: type,
-    id: id
+    id: id,
+    contacts: data.contacts
   };
   viewData[type] = data[type + 's'][id];
   response.render(type + '-detail', viewData);

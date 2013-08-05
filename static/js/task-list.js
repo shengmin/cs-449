@@ -39,10 +39,18 @@ function onAllViewInit() {
 
 function addCheckBoxChange(view) {
     $(view + ' input[type="checkbox"]').change(function() {
-        var size = $(view + ' input[type="checkbox"]:checked').size();
-        $(view + ' #selected-navbar').toggle(size > 0);
-        $(view + ' #unselected-navbar').toggle(size <= 0);
+        refreshMenu(view);
     });
+}
+
+function onViewAfterShow(e) {
+    refreshMenu(e.view.id);
+}
+
+function refreshMenu(view) {
+    var size = $(view + ' input[type="checkbox"]:checked').size();
+    $(view + ' #task-menu').toggle(size > 0);
+    $(view + ' #unselected-navbar').toggle(size <= 0);
 }
 
 function onListClick(e) {
@@ -58,15 +66,8 @@ function onGroupByPopOverInit(e) {
     });
 }
 
-function onRemindMePopOverInit(e) {
-    $('#remind-me-popover input[type="radio"]').click(function() {
-        $('#remind-me-popover').data('kendoMobilePopOver').close();
-        $(this).prop('checked', false);
-    });
-}
-
-function onLayoutShow() {
-    $('#selected-navbar').hide();
+function onLayoutShow(e) {
+    // refreshMenu(e.view.id);
 }
 
 function onContentColumnSwipe(e) {

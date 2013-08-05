@@ -173,8 +173,16 @@ var cs449 = {};
 
   addData(tasks);
 
+  var contacts = [
+    { name: 'ShengMin Zhang', title: 'HR Consultant', last: '2 days ago'},
+    { name: 'ShengMin Zhang', title: 'HR Consultant', last: '2 days ago'},
+    { name: 'ShengMin Zhang', title: 'HR Consultant', last: '2 days ago'},
+    { name: 'ShengMin Zhang', title: 'HR Consultant', last: '2 days ago'}
+  ];
+
   if (typeof exports !== 'undefined') {
     exports.tasks = tasks;
+    exports.contacts = contacts;
   }
 
 })();

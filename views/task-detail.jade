@@ -1,12 +1,12 @@
 extend kendo-mobile-layout
 include mixin/task-menu
+include mixin/task-forward
 block body
   div#message-view(data-role="view", data-layout="default-layout", data-init="onMessageViewInit")
     ul(data-role="listview", data-style="inset")
       li #{task.name}
       li #{task.summary}
     ul#message-list
-
   div#cell-preview-view(data-role="view",  data-show="onCellPreviewViewShow")
     header(data-role="header")
       div(data-role="navbar")
@@ -36,7 +36,7 @@ block body
       li#mail-preview-view-title
       li#mail-preview-view-from
       li#mail-preview-view-content
-
+  +task-forward(contacts)
   div(data-role="layout", data-id="default-layout")
     +task-menu
 

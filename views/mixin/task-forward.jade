@@ -1,0 +1,25 @@
+mixin task-forward(contacts)
+  div#task-forward-view(data-role="view")
+    header(data-role="header")
+      div(data-role="navbar")
+        a(data-role="backbutton", data-align="left", data-icon="arrow-left") Back
+    footer(data-role="footer")
+      div(data-role="navbar")
+        a(data-role="button", data-align="right", data-icon="forward") Forward Task
+    h3 Select Contacts
+    div(data-role="scroller", style="height: 24em;")
+      ul(data-role="listview")
+        each contact in contacts
+          li
+            div.list-row
+              div.icon-column.km-listview-label
+                input(type="checkbox")
+              div.content-column.group
+                h2 #{contact.name}
+                h3 #{contact.title}
+                p.fromId #{contact.last}
+    h3 Add Message
+      ul(data-role="listview", data-style="inset")
+        li
+          label Message
+            textarea(style="resize: none; height: 12em")
