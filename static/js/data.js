@@ -178,7 +178,7 @@ var cs449 = {};
     },
     {
       category: CAT_PRIORITY,
-      name: 'Investigate Mel\'s Diner'',
+      name: 'Investigate Mel\'s Diner',
       contact: 'Edwin',
       summary: 'Find policemen to break into Ed\'s house',
       timestamp: 1375629578449,
