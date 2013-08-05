@@ -4,6 +4,9 @@ include mixin/task-forward
 include mixin/task-add
 include mixin/notification-bar
 block body
+  div#home-screen(data-role="view")
+    div(data-role="content")
+      img.native(src="/images/home-screen.jpg")
   div#category-view(data-after-show="onViewAfterShow", data-role="view", data-layout="default-layout", data-init="onCategoryViewInit")
     ul#category-list
   div#contact-view(data-after-show="onViewAfterShow",data-role="view", data-layout="default-layout", data-init="onContactViewInit")
@@ -12,7 +15,7 @@ block body
     ul#all-list
   +task-forward(contacts)
   +task-add
-  +notification-bar("['category-view', 'contact-view', 'all-view']", "#category-view")
+  +notification-bar("['home-screen', 'category-view', 'contact-view', 'all-view']", "#category-view")
   div(data-role="layout", data-id="default-layout", data-show="onLayoutShow")
     div#group-by-popover(data-role="popover", data-popup="{ height: '12em' }")
       div(data-role="view", data-init="onGroupByPopOverInit")
