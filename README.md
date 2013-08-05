@@ -28,4 +28,5 @@ node server
 - `server.js`: Node.js server runner
 
 ## Live Server
-[http://task.aws.af.cm](http://task.aws.af.cm)
+- Heroku [http://task-hub.herokuapp.com/](http://task-hub.herokuapp.com/)
+- AppFog [http://task.aws.af.cm](http://task.aws.af.cm)

@@ -31,4 +31,4 @@ app.get('/:type/:id', function(request, response) {
   response.render(type + '-detail', viewData);
 });
 
-app.listen(process.env.VCAP_APP_PORT || 3000);
+app.listen(process.env.PORT || process.env.VCAP_APP_PORT || 3000);
