@@ -1,0 +1,12 @@
+mixin mail-preview-view
+  div#mail-preview-view(data-role="modalview", style="width: 90%; height: 24em")
+    header(data-role="header")
+      div(data-role="navbar")
+        a(data-role="button", data-align="left", data-icon="cancel", data-click="closeMailPreviewModalView")
+        a(data-role="button", data-align="right", data-icon="reply", href="#native-mail-view") Reply
+        a(data-role="button", data-align="right", data-icon="details") Move
+        a(data-role="button", data-align="right", data-icon="trash") Delete
+    ul(data-role="listview", data-style="inset")
+      li#mail-preview-view-title
+      li#mail-preview-view-from
+      li#mail-preview-view-content

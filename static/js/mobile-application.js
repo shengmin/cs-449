@@ -99,6 +99,7 @@ function onMessageListTap(e) {
     }
     currentMessage = model;
     onPhonePreviewViewOpen();
+    onMailPreviewViewOpen();
     $(view).data('kendoMobileModalView').open();
 }
 
@@ -106,8 +107,55 @@ function closePhonePreviewModalView() {
   $('#phone-preview-view').data('kendoMobileModalView').close();
 }
 
+function closeMailPreviewModalView() {
+  $('#mail-preview-view').data('kendoMobileModalView').close();
+}
+
 function onPhonePreviewViewOpen() {
   $('#phone-preview-view-title').html(currentMessage.title);
   $('#phone-preview-view-content').html(currentMessage.content);
-  $('#phone-preview-view-from').html(currentMessage.fromName + ' - ' + currentMessage.fromId);
+  $('#phone-preview-view-from').html(currentMessage.fromName + ': ' + currentMessage.fromId);
+}
+
+function onMailPreviewViewOpen() {
+  $('#mail-preview-view-title').html(currentMessage.title);
+  $('#mail-preview-view-content').html(currentMessage.content);
+  $('#mail-preview-view-from').html(currentMessage.fromName + ': ' + currentMessage.fromId);
+}
+
+function onPhoneCallViewBeforeShow() {
+  closePhonePreviewModalView();
+  setTimeout(function() {
+    $("#call-end-view").data("kendoMobileModalView").open();
+  }, 2000);
+}
+
+function onNativeMailViewBeforeShow() {
+  closeMailPreviewModalView();
+}
+
+function onAddNote() {
+  $('#noteBox').show();
+  $('#addCallToExisting').hide();
+  $('#addCallToContacts').hide();
+  $('#noteBox').css('height', '6em');
+  $('#call-end-view').css('height', '15em');
+  $('#callFinishCancel').css('width', '50%');
+  $('#callFinishDone').show();
+  $('#callFinishDone').css('width', '50%');
+}
+
+function onCancelAddNote() {
+  if (!$('#noteBox').is(":visible")) {
+    $("#call-end-view").data("kendoMobileModalView").close();
+    return;
+  }
+  $('#noteBox').hide();
+  $('#noteBox').css('height', '0em');
+  $('#addCallToExisting').show();
+  $('#addCallToContacts').show();
+  $('#call-end-view').css('height', '14em');
+  $('#callFinishDone').css('width', '0%');
+  $('#callFinishCancel').css('width', '100%');
+  $('#callFinishDone').hide();
 }
