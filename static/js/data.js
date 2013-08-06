@@ -134,6 +134,8 @@ var cs449 = {};
       timestamp: 1375629578449,
       messages: [
         {
+          isNew: true,
+          timestamp: 1375629578449,
           type: 'cell',
           actionClass: 'actionClass',
           fromName: 'anonymous',
@@ -167,6 +169,7 @@ var cs449 = {};
           content: 'Hi Brandy, you can find the latest event schedule in the attached file. Please let me know if you hav any questions.'
         },
         {
+          isNew: true,
           type: 'mail',
           fromName: 'Linda',
           timestamp: 1375629578449,
@@ -235,9 +238,23 @@ var cs449 = {};
     { name: 'Robert McIntyre', title: 'Taxi driver', last: '2 days ago'},
   ];
 
+  var newMessages = [];
+
+  tasks.forEach(function(task) {
+    task.messages.forEach(function(message) {
+      if (message.isNew) {
+        newMessages.push(message);
+      }
+    });
+  });
+
   if (typeof exports !== 'undefined') {
     exports.tasks = tasks;
     exports.contacts = contacts;
+    exports.newMessages = newMessages;
+    exports.outdatedTasks = tasks.filter(function(task) {
+      return task.category === CAT_PRIORITY;
+    });
   }
 
 })();

@@ -101,7 +101,7 @@ span[class*="icon-"]:after {
 }
 
 /* line 9, ../../sass/mobile.scss */
-html, body, .km-navbar .km-button, .km-button, .km-button .km-icon {
+html, body, .km-navbar .km-button, .km-list .km-icon, .km-button, .km-button .km-icon, ul .content-row > .icon-column, ul .list-row > .icon-column {
   margin: 0;
   padding: 0;
 }
@@ -138,17 +138,22 @@ html, body {
   font-weight: 800;
 }
 
-/* line 51, ../../sass/mobile.scss */
+/* line 57, ../../sass/mobile.scss */
 .km-button .km-icon {
   margin-right: 5px;
 }
-/* line 57, ../../sass/mobile.scss */
+/* line 63, ../../sass/mobile.scss */
 .km-button .km-text {
   vertical-align: middle;
 }
 
-/* line 62, ../../sass/mobile.scss */
-.list-row {
+/* line 68, ../../sass/mobile.scss */
+a.km-icon {
+  text-decoration: none;
+}
+
+/* line 72, ../../sass/mobile.scss */
+ul .content-row, ul .list-row {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-box;
@@ -159,18 +164,18 @@ html, body {
   box-align: stretch;
 }
 
-/* line 67, ../../sass/mobile.scss */
-.list-row > .content-column h2, .list-row > .content-column h3, .list-row > .content-column h4, .list-row > .content-column p {
+/* line 77, ../../sass/mobile.scss */
+ul .content-row > .content-column h2, ul .list-row > .content-column h2, ul .content-row > .content-column h3, ul .list-row > .content-column h3, ul .content-row > .content-column h4, ul .list-row > .content-column h4, ul .content-row > .content-column p, ul .list-row > .content-column p {
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
-/* line 72, ../../sass/mobile.scss */
-.list-row > .content-column h2, .list-row > .content-column h3, .list-row > .content-column h4 {
+/* line 82, ../../sass/mobile.scss */
+ul .content-row > .content-column h2, ul .list-row > .content-column h2, ul .content-row > .content-column h3, ul .list-row > .content-column h3, ul .content-row > .content-column h4, ul .list-row > .content-column h4 {
   white-space: nowrap;
 }
 
-/* line 77, ../../sass/mobile.scss */
+/* line 87, ../../sass/mobile.scss */
 #device-wrapper {
   background-image: url("../images/device-wrapper.png");
   box-sizing: border-box;
@@ -181,19 +186,14 @@ html, body {
   position: relative;
 }
 
-/* line 87, ../../sass/mobile.scss */
+/* line 97, ../../sass/mobile.scss */
 .group:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* line 93, ../../sass/mobile.scss */
-.theme-blue {
-  background-color: #3395d5;
-}
-
-/* line 97, ../../sass/mobile.scss */
+/* line 103, ../../sass/mobile.scss */
 #notification-indicator {
   -webkit-transition-property: color;
   -moz-transition-property: color;
@@ -210,7 +210,7 @@ html, body {
   font-size: 24px;
 }
 
-/* line 108, ../../sass/mobile.scss */
+/* line 114, ../../sass/mobile.scss */
 .badge {
   display: block;
   float: right;
@@ -218,80 +218,91 @@ html, body {
   font-weight: bold;
 }
 
-/* line 115, ../../sass/mobile.scss */
+/* line 121, ../../sass/mobile.scss */
 img.native {
   width: 100%;
 }
 
-/* line 119, ../../sass/mobile.scss */
+/* line 125, ../../sass/mobile.scss */
 .clickable {
   cursor: pointer;
 }
 
-/* line 123, ../../sass/mobile.scss */
-.list-row {
+/* line 130, ../../sass/mobile.scss */
+ul .label-row {
+  text-align: right;
+}
+/* line 134, ../../sass/mobile.scss */
+ul .left {
+  float: left;
+}
+/* line 138, ../../sass/mobile.scss */
+ul .right {
+  float: right;
+}
+/* line 142, ../../sass/mobile.scss */
+ul .content-row, ul .list-row {
   height: 80px;
 }
-/* line 131, ../../sass/mobile.scss */
-.list-row > .icon-column, .list-row > .content-column {
+/* line 150, ../../sass/mobile.scss */
+ul .content-row > .icon-column, ul .content-row .list-row > .icon-column, ul .content-row > .content-column, ul .content-row .list-row > .content-column, ul .list-row .content-row > .icon-column, ul .list-row > .icon-column, ul .list-row .content-row > .content-column, ul .list-row > .content-column {
   height: 100%;
 }
-/* line 135, ../../sass/mobile.scss */
-.list-row > .icon-column {
+/* line 154, ../../sass/mobile.scss */
+ul .content-row > .icon-column, ul .list-row > .icon-column {
   line-height: 80px;
   width: 60px;
   text-align: center;
-  padding: 0;
-  margin: 0;
   position: static;
   font-size: 24px;
 }
-/* line 146, ../../sass/mobile.scss */
-.list-row > .icon-column input[type="checkbox"] {
+/* line 164, ../../sass/mobile.scss */
+ul .content-row > .icon-column input[type="checkbox"], ul .list-row > .icon-column input[type="checkbox"] {
   position: static;
   margin: 0;
 }
-/* line 152, ../../sass/mobile.scss */
-.list-row > .content-column {
+/* line 170, ../../sass/mobile.scss */
+ul .content-row > .content-column, ul .list-row > .content-column {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -ms-box-flex: 1;
   box-flex: 1;
 }
-/* line 156, ../../sass/mobile.scss */
-.list-row > .content-column h2 {
+/* line 174, ../../sass/mobile.scss */
+ul .content-row > .content-column h2, ul .list-row > .content-column h2 {
   font-size: 14px;
 }
-/* line 161, ../../sass/mobile.scss */
-.list-row > .content-column h3 {
+/* line 179, ../../sass/mobile.scss */
+ul .content-row > .content-column h3, ul .list-row > .content-column h3 {
   font-size: 12px;
 }
-/* line 166, ../../sass/mobile.scss */
-.list-row > .content-column h4 {
+/* line 184, ../../sass/mobile.scss */
+ul .content-row > .content-column h4, ul .list-row > .content-column h4 {
   font-size: 10px;
 }
-/* line 171, ../../sass/mobile.scss */
-.list-row > .content-column p {
+/* line 189, ../../sass/mobile.scss */
+ul .content-row > .content-column p, ul .list-row > .content-column p {
   font-size: 12px;
   font-weight: 300;
+  max-height: 30px;
 }
-/* line 178, ../../sass/mobile.scss */
-.list-row > .content-column h2, .list-row > .content-column h3, .list-row > .content-column h4, .list-row > .content-column p {
+/* line 197, ../../sass/mobile.scss */
+ul .content-row > .content-column h2, ul .content-row > .content-column h3, ul .content-row > .content-column h4, ul .content-row > .content-column p, ul .list-row > .content-column h2, ul .list-row > .content-column h3, ul .list-row > .content-column h4, ul .list-row > .content-column p {
   margin: 0;
   padding: 2px;
 }
-/* line 183, ../../sass/mobile.scss */
-.list-row > .content-column .fromId, .list-row > .content-column .fromName {
+/* line 202, ../../sass/mobile.scss */
+ul .content-row > .content-column .fromId, ul .content-row > .content-column .fromName, ul .list-row > .content-column .fromId, ul .list-row > .content-column .fromName {
   width: 50%;
   display: inline-block;
 }
-/* line 188, ../../sass/mobile.scss */
-.list-row > .content-column .fromId {
+/* line 207, ../../sass/mobile.scss */
+ul .content-row > .content-column .fromId, ul .list-row > .content-column .fromId {
   float: right;
   text-align: right;
   font-weight: 300;
 }
-/* line 194, ../../sass/mobile.scss */
-.list-row > .content-column .fromName {
+/* line 213, ../../sass/mobile.scss */
+ul .content-row > .content-column .fromName, ul .list-row > .content-column .fromName {
   float: left;
 }

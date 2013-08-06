@@ -1,10 +1,34 @@
-include menu
+include list
 
-mixin reminder-view
-  div#reminder-view(data-role="view", data-title="Reminders")
+mixin reminder-view(messages, tasks)
+  div#reminder-view(data-role="view", data-title="Reminders", data-init="onReminderViewInit")
     header(data-role="header")
       div(data-role="navbar")
         h4(data-role="view-title")
+    ul(data-role="listview", data-type="group")
+      if messages.length > 0
+        li #{messages.length} New Messages
+          ul
+            each message in messages
+              li
+                div.group
+                  span.left #{message.fromId}
+                  span.right #{message.date}
+                div.content-row
+                  div.icon-column
+                    i(class=['km-icon', 'km-' + message.type])
+                  div.content-column.clickable
+                    h3 #{message.fromName}
+                    h2 #{message.title}
+                    p #{message.content}
+                  div.icon-column.clickable
+                    i.km-icon.km-details
+      if tasks.length > 0
+        li #{tasks.length} Reminders
+          ul
+            li ddd
+            li jjj
+
     footer(data-role="footer")
       div(data-role="navbar")
         a(data-role="button", href="#task-list-view", data-icon="home") Enter

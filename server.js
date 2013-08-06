@@ -15,7 +15,7 @@ app.get('/', function(reqeust, response) {
 });
 
 app.get('/mixin-test', function(request, response) {
-  response.render('mixin-test');
+  response.render('mixin-test', data);
 });
 
 app.get('/:type', function(request, response) {
