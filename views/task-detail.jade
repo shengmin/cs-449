@@ -5,7 +5,7 @@ include mixin/task-add
 block body
   div#message-view(data-role="view", data-layout="default-layout", data-init="onMessageViewInit")
     ul(data-role="listview", data-style="inset")
-      li #{task.name}
+      li(style="font-size: 20px; font-weight: bold;") #{task.name}
       li #{task.summary}
     ul#message-list
   +task-add
