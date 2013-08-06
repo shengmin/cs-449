@@ -1,0 +1,19 @@
+mixin phone-preview-view
+  div#phone-preview-view(style="width: 90%; height: 24em;", data-role="modalview")
+    header(data-role="header")
+      div(data-role="navbar")
+        a(data-role="button", data-align="left", data-icon="cancel", data-click="closePhonePreviewModalView")
+        a(data-role="button", data-align="right", data-icon="cell", href="#phone-call-view") Call Back
+        a(data-role="button", data-align="right", data-icon="folder") Move
+        a(data-role="button", data-align="right", data-icon="trash") Delete
+    ul(data-role="listview", data-style="inset")
+      li#phone-preview-view-title
+      li#phone-preview-view-from
+      li#phone-preview-view-content
+    footer(data-role="footer")
+      div(data-role="navbar")
+        ul(data-role="buttongroup")
+          li(data-icon="rewind")
+          li(data-icon="play")
+          li(data-icon="fastforward")
+

@@ -4,6 +4,7 @@ var DS_TASKS = kendo.data.DataSource.create({
   data: cs449.tasks,
   group: { field: 'category' }
 });
+var DS_MESSAGES = null;
 
 var currentTask = null;
 var currentMessage = null;
@@ -73,11 +74,40 @@ function onMessageListViewBeforeShow() {
     style: 'inset'
   });
 
+  DS_MESSAGES = kendo.data.DataSource.create({
+    data: currentTask.messages
+  });
+
   $('#message-list').kendoMobileListView({
     template: $('#message-template').html(),
     fixedHeaders: true,
-    dataSource: kendo.data.DataSource.create({
-      data: currentTask.messages
-    })
+    dataSource: DS_MESSAGES
   });
+}
+
+function onMessageListTap(e) {
+    var model = DS_MESSAGES.getByUid($(e.touch.target).closest('li[data-uid]').attr('data-uid'));
+    var type = model.type;
+    var view = '';
+    switch(type) {
+      case 'mail':
+        view = '#mail-preview-view';
+        break;
+      case 'cell':
+        view = '#phone-preview-view';
+        break;
+    }
+    currentMessage = model;
+    onPhonePreviewViewOpen();
+    $(view).data('kendoMobileModalView').open();
+}
+
+function closePhonePreviewModalView() {
+  $('#phone-preview-view').data('kendoMobileModalView').close();
+}
+
+function onPhonePreviewViewOpen() {
+  $('#phone-preview-view-title').html(currentMessage.title);
+  $('#phone-preview-view-content').html(currentMessage.content);
+  $('#phone-preview-view-from').html(currentMessage.fromName + ' - ' + currentMessage.fromId);
 }

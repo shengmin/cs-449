@@ -65,7 +65,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 39, ../../sass/_fonts.scss */
+/* line 28, ../../sass/_fonts.scss */
 span[class*="icon-"]:after {
   font-family: "entypo";
   font-weight: normal;
@@ -162,6 +162,12 @@ span[class*="icon-"]:after {
 /* line 9, ../../sass/_fonts.scss */
 .km-folder:after {
   content: "📁";
+  font-family: "entypo";
+}
+
+/* line 9, ../../sass/_fonts.scss */
+.km-cancel:after {
+  content: "\2715";
   font-family: "entypo";
 }
 

@@ -25,17 +25,6 @@ $classPrefix: "km-";
   }
 }
 
-// span[class*="icon-"] {
-//   display: inline;
-//   width: auto;
-//   height: auto;
-//   line-height: inherit;
-//   vertical-align: baseline;
-//   background-image: none;
-//   background-position: 0 0;
-//   background-repeat: repeat;
-// }
-
 span[class*="icon-"]:after {
   font-family: $fontName;
   font-weight: normal;
@@ -58,3 +47,4 @@ span[class*="icon-"]:after {
 @include i-class(twitter, "\f309");
 @include i-class(circle, "\26ab");
 @include i-class(folder, 📁);
+@include i-class(cancel, "\2715");

@@ -32,7 +32,7 @@ html, body {
   .km-button {
     @extend %box-reset;
     line-height: 1;
-    margin: 5px 2px;
+    margin: 8px 4px;
     padding: 5px 10px;
   }
 }
@@ -59,6 +59,11 @@ html, body {
     @extend %box-reset;
 
     margin-right: 5px;
+    width: auto;
+  }
+
+  .km-icon:last-child {
+    margin-right: 0;
   }
 
   .km-text {
