@@ -44,19 +44,22 @@ block body
           li(data-icon="home") Home
   +task-forward(contacts)
 
-  div#end-call-view(data-role="modalview", style="width: 70%; height: 14em")
+  div#end-call-view(data-role="modalview", style="height: auto; width: 70%; transition: height 1s;")
     header(data-role="header")
       div(data-role="navbar")
         span Call Ended: 519-888-0000
     ul(data-role="listview")
       li
-        a(href="#task-add-view", data-role="button") Create New Task
-      li
-        a(href="#", data-role="button") Add to Existing Task
-      li
+        a(data-role="button", onclick="onAddNote()") Create New Task
+      li#noteBox(style="height: 0; display: none; transition: height 1s;")
+        textarea(style="resize: none; height: 6em; width: 100%; float: left;", placeholder="Summarize the phone call..")
+      li#addCallToExisting
+        a(data-role="button", onclick="onAddNote()") Add to Existing Task
+      li#addCallToContacts
         a(href="#", data-role="button") Add to Contacts
       li
-        a(href="#", data-role="button") Cancel
+        button#callFinishCancel(data-role="button", data-click="onCancelAddNote", style="float: left; width: 100%; margin: 0; transition: width 1s") Cancel
+        button#callFinishDone(href="#task-add-view", data-role="button", style="display: none; background-color: #26a; color: white; float: right; width: 0%; margin: 0; transition: width 1s") Done
 
   div#phone-call(data-role="view", data-show="onPhoneCallShow")
     div(data-role="content")
