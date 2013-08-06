@@ -5,10 +5,8 @@ mixin task-add
         a(data-role="backbutton", data-align="left", data-icon="arrow-left") Back
     footer(data-role="footer")
       div(data-role="navbar")
-        ul(data-role="buttongroup", data-select="goHome")
-          li(data-icon="home") Home
         a(data-role="backbutton", data-align="left", data-icon="arrow-left") Cancel
-        a(data-role="button", data-align="right", data-icon="forward") Add Task
+        a(data-role="button", data-align="right", data-icon="forward", href="#task-list-view") Add
     ul(data-role="listview", data-style="inset")
       li
         label Task Name

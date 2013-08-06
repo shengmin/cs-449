@@ -26,7 +26,7 @@ block body
   +task-add
   +notification-bar("['home-screen', 'native-mail-view', 'phone-call-view', 'reminder-view', 'task-list-view', 'message-list-view']", "#reminder-view", newMessages.length + outdatedTasks.length)
 
-  div#phone-call-view(data-role="view", data-before-show="onPhoneCallViewBeforeShow")
+  div#phone-call-view(data-role="view", data-hide="onPhoneCallViewHide", data-before-show="onPhoneCallViewBeforeShow")
     div(data-role="content")
       img.native(src="/images/call-screen.jpg")
   div#native-mail-view(data-role="view", data-before-show="onNativeMailViewBeforeShow")
@@ -39,15 +39,15 @@ block body
     ul(data-role="listview")
       li
         a(data-role="button", onclick="onAddNote()") Create New Task
-      li#noteBox(style="height: 0; display: none; transition: height 1s;")
-        textarea(style="resize: none; height: 6em; width: 100%; float: left;", placeholder="Summarize the phone call..")
+      li#noteBox.animatable(style="height: 0; display: none;")
+        textarea(style="resize: none; height: 6em;", placeholder="Summarize the phone call..")
       li#addCallToExisting
         a(data-role="button", onclick="onAddNote()") Add to Existing Task
       li#addCallToContacts
         a(data-role="button") Add to Contacts
       li
-        button#callFinishCancel(data-role="button", data-click="onCancelAddNote", style="float: left; width: 100%; margin: 0; transition: width 1s") Cancel
-        button#callFinishDone(href="#task-add-view", data-role="button", style="display: none; background-color: #26a; color: white; float: right; width: 0%; margin: 0; transition: width 1s") Done
+        button#callFinishCancel.animatable(data-role="button", data-click="onCancelAddNote", style="float: left;") Cancel
+        button#callFinishDone.animatable(href="#task-add-view", data-role="button", style="display: none; background-color: #26a; color: white; float: right; width: 0%;") Done
 
   div(data-role="layout", data-id="default-layout")
     div#group-by-popover(data-role="popover", data-popup="{ height: '12em' }")

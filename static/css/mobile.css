@@ -158,17 +158,31 @@ html, body {
   vertical-align: middle;
 }
 
-/* line 75, ../../sass/mobile.scss */
-.km-list input[type="search"] {
+/* line 77, ../../sass/mobile.scss */
+.km-list input[type="search"],
+.km-list input[type="text"],
+.km-list textarea {
   width: 100%;
 }
 
-/* line 80, ../../sass/mobile.scss */
+/* line 82, ../../sass/mobile.scss */
+.animatable {
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+/* line 87, ../../sass/mobile.scss */
 a.km-icon {
   text-decoration: none;
 }
 
-/* line 84, ../../sass/mobile.scss */
+/* line 91, ../../sass/mobile.scss */
 ul .content-row, ul .list-row {
   display: -webkit-box;
   display: -moz-box;
@@ -180,18 +194,18 @@ ul .content-row, ul .list-row {
   box-align: stretch;
 }
 
-/* line 89, ../../sass/mobile.scss */
+/* line 96, ../../sass/mobile.scss */
 .title, ul .content-row > .content-column h2, ul .list-row > .content-column h2, ul .content-row > .content-column h3, ul .list-row > .content-column h3, ul .content-row > .content-column h4, ul .list-row > .content-column h4, ul .content-row > .content-column p, ul .list-row > .content-column p {
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
-/* line 94, ../../sass/mobile.scss */
+/* line 101, ../../sass/mobile.scss */
 .title, ul .content-row > .content-column h2, ul .list-row > .content-column h2, ul .content-row > .content-column h3, ul .list-row > .content-column h3, ul .content-row > .content-column h4, ul .list-row > .content-column h4 {
   white-space: nowrap;
 }
 
-/* line 99, ../../sass/mobile.scss */
+/* line 106, ../../sass/mobile.scss */
 #device-wrapper {
   background-image: url("../images/device-wrapper.png");
   box-sizing: border-box;
@@ -202,14 +216,14 @@ ul .content-row, ul .list-row {
   position: relative;
 }
 
-/* line 109, ../../sass/mobile.scss */
+/* line 116, ../../sass/mobile.scss */
 .group:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* line 115, ../../sass/mobile.scss */
+/* line 122, ../../sass/mobile.scss */
 #notification-indicator {
   -webkit-transition-property: color;
   -moz-transition-property: color;
@@ -226,7 +240,7 @@ ul .content-row, ul .list-row {
   font-size: 24px;
 }
 
-/* line 126, ../../sass/mobile.scss */
+/* line 133, ../../sass/mobile.scss */
 .badge {
   display: block;
   float: right;
@@ -234,23 +248,23 @@ ul .content-row, ul .list-row {
   font-weight: bold;
 }
 
-/* line 133, ../../sass/mobile.scss */
+/* line 140, ../../sass/mobile.scss */
 img.native {
   width: 100%;
 }
 
-/* line 137, ../../sass/mobile.scss */
+/* line 144, ../../sass/mobile.scss */
 .clickable {
   cursor: pointer;
 }
 
-/* line 141, ../../sass/mobile.scss */
+/* line 148, ../../sass/mobile.scss */
 .title {
   font-size: 16px;
   font-weight: bold;
 }
 
-/* line 149, ../../sass/mobile.scss */
+/* line 156, ../../sass/mobile.scss */
 ul .label-row .label {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -262,27 +276,27 @@ ul .label-row .label {
   padding: 2px 4px;
   margin: 2px;
 }
-/* line 158, ../../sass/mobile.scss */
+/* line 165, ../../sass/mobile.scss */
 ul .contact {
   font-size: 14px;
 }
-/* line 162, ../../sass/mobile.scss */
+/* line 169, ../../sass/mobile.scss */
 ul .left {
   float: left;
 }
-/* line 166, ../../sass/mobile.scss */
+/* line 173, ../../sass/mobile.scss */
 ul .right {
   float: right;
 }
-/* line 170, ../../sass/mobile.scss */
+/* line 177, ../../sass/mobile.scss */
 ul .content-row, ul .list-row {
   height: 80px;
 }
-/* line 178, ../../sass/mobile.scss */
+/* line 185, ../../sass/mobile.scss */
 ul .content-row > .icon-column, ul .content-row .list-row > .icon-column, ul .content-row > .content-column, ul .content-row .list-row > .content-column, ul .list-row .content-row > .icon-column, ul .list-row > .icon-column, ul .list-row .content-row > .content-column, ul .list-row > .content-column {
   height: 100%;
 }
-/* line 182, ../../sass/mobile.scss */
+/* line 189, ../../sass/mobile.scss */
 ul .content-row > .icon-column, ul .list-row > .icon-column {
   line-height: 80px;
   width: 60px;
@@ -290,12 +304,12 @@ ul .content-row > .icon-column, ul .list-row > .icon-column {
   position: static;
   font-size: 24px;
 }
-/* line 192, ../../sass/mobile.scss */
+/* line 199, ../../sass/mobile.scss */
 ul .content-row > .icon-column input[type="checkbox"], ul .list-row > .icon-column input[type="checkbox"] {
   position: static;
   margin: 0;
 }
-/* line 198, ../../sass/mobile.scss */
+/* line 205, ../../sass/mobile.scss */
 ul .content-row > .content-column, ul .list-row > .content-column {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
@@ -303,25 +317,25 @@ ul .content-row > .content-column, ul .list-row > .content-column {
   box-flex: 1;
   padding: 4px;
 }
-/* line 203, ../../sass/mobile.scss */
+/* line 210, ../../sass/mobile.scss */
 ul .content-row > .content-column h2, ul .list-row > .content-column h2 {
   font-size: 16px;
 }
-/* line 208, ../../sass/mobile.scss */
+/* line 215, ../../sass/mobile.scss */
 ul .content-row > .content-column h3, ul .list-row > .content-column h3 {
   font-size: 12px;
 }
-/* line 213, ../../sass/mobile.scss */
+/* line 220, ../../sass/mobile.scss */
 ul .content-row > .content-column h4, ul .list-row > .content-column h4 {
   font-size: 10px;
 }
-/* line 218, ../../sass/mobile.scss */
+/* line 225, ../../sass/mobile.scss */
 ul .content-row > .content-column p, ul .list-row > .content-column p {
   font-size: 12px;
   font-weight: 300;
   max-height: 30px;
 }
-/* line 226, ../../sass/mobile.scss */
+/* line 233, ../../sass/mobile.scss */
 ul .content-row > .content-column h2, ul .content-row > .content-column h3, ul .content-row > .content-column h4, ul .content-row > .content-column p, ul .list-row > .content-column h2, ul .list-row > .content-column h3, ul .list-row > .content-column h4, ul .list-row > .content-column p {
   margin: 0;
   padding: 2px;

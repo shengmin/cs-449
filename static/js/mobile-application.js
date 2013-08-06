@@ -134,15 +134,20 @@ function onNativeMailViewBeforeShow() {
   closeMailPreviewModalView();
 }
 
+function onPhoneCallViewHide() {
+  $('#call-end-view').data('kendoMobileModalView').close();
+  onCancelAddNote();
+}
+
 function onAddNote() {
   $('#noteBox').show();
   $('#addCallToExisting').hide();
   $('#addCallToContacts').hide();
   $('#noteBox').css('height', '6em');
   $('#call-end-view').css('height', '15em');
-  $('#callFinishCancel').css('width', '50%');
+  $('#callFinishCancel').css('width', '45%');
   $('#callFinishDone').show();
-  $('#callFinishDone').css('width', '50%');
+  $('#callFinishDone').css('width', '45%');
 }
 
 function onCancelAddNote() {
@@ -151,11 +156,11 @@ function onCancelAddNote() {
     return;
   }
   $('#noteBox').hide();
-  $('#noteBox').css('height', '0em');
+  $('#noteBox').css('height', 0);
   $('#addCallToExisting').show();
   $('#addCallToContacts').show();
   $('#call-end-view').css('height', '14em');
-  $('#callFinishDone').css('width', '0%');
+  $('#callFinishDone').css('width', 0);
   $('#callFinishCancel').css('width', '100%');
   $('#callFinishDone').hide();
 }

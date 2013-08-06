@@ -115,7 +115,7 @@ var CAT_EVERYTHING_ELSE = '3 - Everything Else';
       ]
     },
     {
-      category: CAT_PRIORITY,
+      category: CAT_WAITING,
       name: 'Break the bad news',
       contact: 'ShengMin Zhang',
       summary: 'Tell him his name is Edward',
@@ -133,7 +133,7 @@ var CAT_EVERYTHING_ELSE = '3 - Everything Else';
       ]
     },
     {
-      category: CAT_PRIORITY,
+      category: CAT_WAITING,
       name: 'Fix the chair at the Waterloo Park',
       contact: 'ShengMin Zhang',
       summary: 'It\'s reported that the chair at the Waterloo Park is broken, send people to fix it',
@@ -167,9 +167,9 @@ var CAT_EVERYTHING_ELSE = '3 - Everything Else';
           content: 'Hi Brandy, the volunteer event is happening this Friday. There will be 50 people attending. Please make sure you organize it well.'
         },
         {
-          type: 'phone',
+          type: 'cell',
           fromName: 'Linda',
-          timestamp: 1375629578449,
+          timestamp: 13345679578449,
           fromId: '519-781-0000',
           title: 'Event schedule',
           content: 'Hi Brandy, you can find the latest event schedule in the attached file. Please let me know if you hav any questions.'
@@ -178,7 +178,7 @@ var CAT_EVERYTHING_ELSE = '3 - Everything Else';
           isNew: true,
           type: 'mail',
           fromName: 'Linda',
-          timestamp: 1375629578449,
+          timestamp: 1375999578449,
           fromId: 'linda@waterloo.ca',
           title: 'Wendy is not coming',
           content: 'Hi Brandy, Wendy said she wouldn\'t come to the event.'
@@ -190,13 +190,13 @@ var CAT_EVERYTHING_ELSE = '3 - Everything Else';
       name: 'Investigate Mel\'s Diner',
       contact: 'Edwin',
       summary: 'Find policemen to break into Ed\'s house',
-      timestamp: 1375629578449,
+      timestamp: 1375000578449,
       messages: [
         {
           type: 'mail',
           fromName: 'Linda',
           fromId: 'linda@waterloo.ca',
-          timestamp: 1375629578449,
+          timestamp: 1312349578449,
           title: 'Edwin is locked',
           content: 'Hi Larry, Edward didn\'t do any work, can you teach him a lesson?'
         },
@@ -204,7 +204,7 @@ var CAT_EVERYTHING_ELSE = '3 - Everything Else';
           type: 'mail',
           fromName: 'Linda',
           fromId: 'linda@waterloo.ca',
-          timestamp: 1375629578449,
+          timestamp: 1375456778449,
           title: 'Edwin is locked',
           content: 'Hi Larry, Edward didn\'t do any work, can you teach him a lesson?'
         },
@@ -215,13 +215,13 @@ var CAT_EVERYTHING_ELSE = '3 - Everything Else';
       name: 'Summer Spectacular Gala Extravaganza',
       contact: 'Dan',
       summary: 'Plan a blowout party',
-      timestamp: 1375629578449,
+      timestamp: 1375678908449,
       messages: [
         {
           type: 'mail',
           fromName: 'Brad',
           fromId: 'brad@waterloo.ca',
-          timestamp: 1375629578449,
+          timestamp: 1375612348449,
           title: 'Waterloo school district needs school buses',
           content: 'Waterloo is short on school buses, could you please arrange that for us?'
         }

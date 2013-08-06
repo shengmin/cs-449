@@ -72,9 +72,16 @@ html, body {
 }
 
 .km-list {
-  input[type="search"] {
+  input[type="search"],
+  input[type="text"],
+  textarea {
     width: 100%;
   }
+}
+
+.animatable {
+  @include transition-property(all);
+  @include transition-duration(0.5s);
 }
 
 a.km-icon {

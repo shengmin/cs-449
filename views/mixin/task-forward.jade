@@ -5,9 +5,7 @@ mixin task-forward(contacts)
         a(data-role="backbutton", data-align="left", data-icon="arrow-left") Back
     footer(data-role="footer")
       div(data-role="navbar")
-        ul(data-role="buttongroup", data-select="goHome")
-          li(data-icon="home") Home
-        a(data-role="button", data-align="right", data-icon="forward") Forward Task
+        a(data-role="button", data-align="right", data-icon="forward", href="#task-list-view") Forward Task
     h3 Select Contacts
     div(data-role="scroller", style="height: 24em;")
       ul(data-role="listview")
@@ -21,7 +19,7 @@ mixin task-forward(contacts)
                 h3 #{contact.title}
                 p.fromId #{contact.last}
     h3 Add Message
-      ul(data-role="listview", data-style="inset")
-        li
-          label Message
-            textarea(style="resize: none; height: 12em")
+    ul(data-role="listview", data-style="inset")
+      li
+        label &nbsp;
+          textarea(style="resize: none; height: 12em")
