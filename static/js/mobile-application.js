@@ -20,7 +20,7 @@ function onTaskListViewInit() {
 }
 
 function onTaskListTap(e) {
-    currentTask = DS_TASKS.getByUid($(e.touch.target).closest('li[data-uid]').attr('data-uid'));
+    currentTask = cs449.tasks[DS_TASKS.getByUid($(e.touch.target).closest('li[data-uid]').attr('data-uid')).id];
     app.navigate('#message-list-view');
 }
 
@@ -101,6 +101,27 @@ function onMessageListTap(e) {
     onPhonePreviewViewOpen();
     onMailPreviewViewOpen();
     $(view).data('kendoMobileModalView').open();
+}
+
+function onReminderTaskListTap(e) {
+  currentTask = cs449.tasks[$(e.touch.target).closest('[data-id]').attr('data-id')];
+  app.navigate('#message-list-view');
+}
+
+function onMessageListSwipe(e) {
+  var model = DS_MESSAGES.getByUid($(e.touch.target).closest('li[data-uid]').attr('data-uid'));
+  DS_MESSAGES.remove(model);
+}
+
+function onTaskListSwipe(e) {
+  var model = DS_TASKS.getByUid($(e.touch.target).closest('li[data-uid]').attr('data-uid'));
+  DS_TASKS.remove(model);
+}
+
+function deleteMessage(e) {
+  DS_MESSAGES.remove(currentMessage);
+  closeMailPreviewModalView();
+  closePhonePreviewModalView();
 }
 
 function closePhonePreviewModalView() {

@@ -5,7 +5,7 @@ mixin mail-preview-view
         a(data-role="button", data-align="left", data-icon="cancel", data-click="closeMailPreviewModalView")
         a(data-role="button", data-align="right", data-icon="reply", href="#native-mail-view") Reply
         a(data-role="button", data-align="right", data-icon="details") Move
-        a(data-role="button", data-align="right", data-icon="trash") Delete
+        a(data-role="button", data-align="right", data-icon="trash", data-click="deleteMessage") Delete
     ul(data-role="listview", data-style="inset")
       li#mail-preview-view-title
       li#mail-preview-view-from

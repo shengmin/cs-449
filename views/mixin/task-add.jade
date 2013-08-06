@@ -1,15 +1,17 @@
 mixin task-add
-  div#task-add-view(data-role="view", data-show="onCreateNewTaskShow")
+  div#task-add-view(data-role="view", data-title="Add Task")
     header(data-role="header")
       div(data-role="navbar")
         a(data-role="backbutton", data-align="left", data-icon="arrow-left") Back
+      div(data-role="navbar")
+        h4(data-role="view-title")
     footer(data-role="footer")
       div(data-role="navbar")
         a(data-role="backbutton", data-align="left", data-icon="arrow-left") Cancel
         a(data-role="button", data-align="right", data-icon="forward", href="#task-list-view") Add
-    ul(data-role="listview", data-style="inset")
+    ul(data-role="listview")
       li
-        label Task Name
+        label Name
           input(type="text", placeholder="Help me find my cat")
       li
         label Summary

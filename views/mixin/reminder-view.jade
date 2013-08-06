@@ -3,7 +3,7 @@ mixin reminder-view(messages, tasks, home)
     header(data-role="header")
       div(data-role="navbar")
         h4(data-role="view-title")
-    ul.clickable(data-role="listview", data-type="group")
+    ul(data-role="listview", data-type="group")
       if messages.length > 0
         li #{messages.length} New Messages
           ul
@@ -23,14 +23,19 @@ mixin reminder-view(messages, tasks, home)
                     i.km-icon.km-details
       if tasks.length > 0
         li #{tasks.length} Reminders
-          ul
+          ul.clickable
             each task in tasks
-              li
+              li(data-id="#{task.id}")
                 div.group
                   span.left.contact #{task.contact}
                   span.right #{task.date}
                 div.content-row
-                  div.content-column
+                  div.content-column(
+                    data-role="touch"
+                    data-enable-swipe="true"
+                    data-tap="onReminderTaskListTap"
+                    data-min-x-delta="100"
+                  )
                     h2 #{task.name}
                     p #{task.summary}
                   div.icon-column
