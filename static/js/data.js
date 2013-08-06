@@ -102,7 +102,7 @@ var CAT_EVERYTHING_ELSE = '3 - Everything Else';
       name: 'Submit Zoning Application',
       contact: 'ShengMin Zhang',
       summary: 'Jennifer wants to build a housing slum downtown',
-      timestamp: 1375629578449,
+      timestamp: 1375666678449,
       messages: [
         {
           type: 'cell',
@@ -119,15 +119,15 @@ var CAT_EVERYTHING_ELSE = '3 - Everything Else';
       name: 'Break the bad news',
       contact: 'ShengMin Zhang',
       summary: 'Tell him his name is Edward',
-      timestamp: 1375629578449,
+      timestamp: 1375688888449,
       labels: [{ color: '#0F71D9', text: 'FWD: Jessica' }],
       messages: [
         {
           type: 'mail',
-          actionClass: 'actionClass',
-          fromName: 'Shengming Zhang',
+          timestamp: 1375688888449,
+          fromName: 'ShengMin Zhang',
           fromId: 'me@shengmin.me',
-          title: 'Going to Franch',
+          title: 'Going to France',
           content: 'Hi Shengmin, I am flying to France this weekend for business trip. I don\'t know where I could find people to take care of my children. Could you help me with this?'
         }
       ]
@@ -144,7 +144,6 @@ var CAT_EVERYTHING_ELSE = '3 - Everything Else';
           isNew: true,
           timestamp: 1375629578449,
           type: 'cell',
-          actionClass: 'actionClass',
           fromName: 'anonymous',
           fromId: 'unknown',
           title: 'No title',

@@ -17,7 +17,7 @@ mixin reminder-view(messages, tasks, home)
                     i(class=['km-icon', 'km-' + message.type])
                   div.content-column
                     h3 #{message.fromName}
-                    h2(style="font-size: 20px;") #{message.title}
+                    h2 #{message.title}
                     p #{message.content}
                   div.icon-column
                     i.km-icon.km-details

@@ -9,3 +9,14 @@ mixin reminder-menu
   header#reminder-menu(data-role="header")
     div(data-role="navbar")
       a(data-role="button", data-align="right", data-icon="recents") Remind Later
+
+mixin search-bar
+  ul(data-role="listview")
+    li(data-icon="search")
+      label &nbsp;
+        input(type="search", placeholder="Search")
+
+mixin footer
+  footer(data-role="footer")
+    div(data-role="navbar")
+      a(data-role="button", data-icon="home", href="#task-list-view") Home

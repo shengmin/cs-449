@@ -4,17 +4,25 @@ include mixin/task-forward
 include mixin/task-add
 include mixin/notification-bar
 include mixin/reminder-view
+include mixin/menu
+
 block body
   div#home-screen(data-role="view")
     div(data-role="content")
       img.native(src="/images/home-screen.jpg")
+
   div#task-list-view(data-after-show="onTaskListViewAfterShow", data-role="view", data-layout="default-layout", data-init="onTaskListViewInit")
-    div#task-list
+    ul#task-list
+
+  div#message-list-view(data-role="view", data-layout="message-layout", data-before-show="onMessageListViewBeforeShow")
+    ul#message-list-title
+    ul#message-list
 
   +reminder-view(newMessages, outdatedTasks, '#task-list-view')
   +task-forward(contacts)
   +task-add
-  +notification-bar("['home-screen', 'reminder-view', 'task-list-view']", "#reminder-view", newMessages.length + outdatedTasks.length)
+  +notification-bar("['home-screen', 'reminder-view', 'task-list-view', 'message-list-view']", "#reminder-view", newMessages.length + outdatedTasks.length)
+
   div(data-role="layout", data-id="default-layout")
     div#group-by-popover(data-role="popover", data-popup="{ height: '12em' }")
       div(data-role="view", data-init="onGroupByPopOverInit")
@@ -31,15 +39,42 @@ block body
       div(data-role="navbar")
         a(data-align="right", data-role="button", data-icon="menu", data-rel="popover", href="#group-by-popover") Group By
         a(data-align="right", data-role="button", data-icon="add", href="#task-add-view") Add Task
-      ul(data-role="listview")
-        li(data-icon="search")
-          label &nbsp;
-            input(type="search", placeholder="Search")
-    footer(data-role="footer")
-      div(data-role="navbar")
-        a(data-role="button", data-icon="home", href="#task-list-view") Home
+      +search-bar
+    +footer
+
+  div(data-role="layout", data-id="message-layout")
+    +task-menu
+    +footer
 
 block body-script
+  script#message-title-template(type="text/x-kendo-template").
+    <li class="title">#= name #</li>
+    <li>#= summary #</li>
+
+  script#message-template(type="text/x-kendo-template").
+    <div class="group">
+      <span class="left"> #= fromId #</span>
+      <span class="right"> #= date #</span>
+    </div>
+    <div class="content-row">
+      <div class="icon-column">
+        <i class="#= 'km-icon km-' + type #"></i>
+      </div>
+      <div class="content-column clickable"
+        data-role="touch"
+        data-enable-swipe="true"
+        data-tap="onMessageListTap"
+        data-swipe="onMessageListSwipe"
+        data-min-x-delta="100">
+        <h3>#= fromName #</h3>
+        <h2>#= title #</h2>
+        <p>#= content #</p>
+      </div>
+      <div class="icon-column">
+        <i class="km-icon km-details"></i>
+      </div>
+    </div>
+
   script#task-template(type="text/x-kendo-template").
     <div class="group">
       <span class="left contact"> #= contact #</span>
@@ -52,10 +87,9 @@ block body-script
       <div class="content-column clickable"
         data-role="touch"
         data-enable-swipe="true"
-        data-tap="onContentColumnTap"
-        data-swipe="onContentColumnSwipe"
-        data-min-x-delta="100"
-        data-task-id="#= id #">
+        data-tap="onTaskListTap"
+        data-swipe="onTaskListSwipe"
+        data-min-x-delta="100">
         <h2> #= name #</h2>
         <p> #= summary #</p>
       </div>
@@ -70,4 +104,3 @@ block body-script
         </div>
       # } #
     </div>
-  script(src="/js/task-list.js")

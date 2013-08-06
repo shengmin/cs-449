@@ -18,6 +18,11 @@ function onTaskListViewInit() {
   addCheckBoxHandler();
 }
 
+function onTaskListTap(e) {
+    currentTask = DS_TASKS.getByUid($(e.touch.target).closest('li[data-uid]').attr('data-uid'));
+    app.navigate('#message-list-view');
+}
+
 function addCheckBoxHandler() {
   $('#task-list input[type="checkbox"]').change(function() {
     toggleHeader();
@@ -58,5 +63,21 @@ function onRemindMePopOverInit() {
     });
     $('#task-list').data('kendoMobileListView').setDataSource(DS_TASKS);
     toggleHeader();
+  });
+}
+
+function onMessageListViewBeforeShow() {
+  var template = kendo.template($('#message-title-template').html());
+  $('#message-list-title').html(template(currentTask));
+  $('#message-list-title').kendoMobileListView({
+    style: 'inset'
+  });
+
+  $('#message-list').kendoMobileListView({
+    template: $('#message-template').html(),
+    fixedHeaders: true,
+    dataSource: kendo.data.DataSource.create({
+      data: currentTask.messages
+    })
   });
 }

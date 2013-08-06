@@ -170,13 +170,13 @@ ul .content-row, ul .list-row {
 }
 
 /* line 84, ../../sass/mobile.scss */
-ul .content-row > .content-column h2, ul .list-row > .content-column h2, ul .content-row > .content-column h3, ul .list-row > .content-column h3, ul .content-row > .content-column h4, ul .list-row > .content-column h4, ul .content-row > .content-column p, ul .list-row > .content-column p {
+.title, ul .content-row > .content-column h2, ul .list-row > .content-column h2, ul .content-row > .content-column h3, ul .list-row > .content-column h3, ul .content-row > .content-column h4, ul .list-row > .content-column h4, ul .content-row > .content-column p, ul .list-row > .content-column p {
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
 /* line 89, ../../sass/mobile.scss */
-ul .content-row > .content-column h2, ul .list-row > .content-column h2, ul .content-row > .content-column h3, ul .list-row > .content-column h3, ul .content-row > .content-column h4, ul .list-row > .content-column h4 {
+.title, ul .content-row > .content-column h2, ul .list-row > .content-column h2, ul .content-row > .content-column h3, ul .list-row > .content-column h3, ul .content-row > .content-column h4, ul .list-row > .content-column h4 {
   white-space: nowrap;
 }
 
@@ -233,7 +233,13 @@ img.native {
   cursor: pointer;
 }
 
-/* line 138, ../../sass/mobile.scss */
+/* line 136, ../../sass/mobile.scss */
+.title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* line 144, ../../sass/mobile.scss */
 ul .label-row .label {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -245,27 +251,27 @@ ul .label-row .label {
   padding: 2px 4px;
   margin: 2px;
 }
-/* line 147, ../../sass/mobile.scss */
+/* line 153, ../../sass/mobile.scss */
 ul .contact {
   font-size: 14px;
 }
-/* line 151, ../../sass/mobile.scss */
+/* line 157, ../../sass/mobile.scss */
 ul .left {
   float: left;
 }
-/* line 155, ../../sass/mobile.scss */
+/* line 161, ../../sass/mobile.scss */
 ul .right {
   float: right;
 }
-/* line 159, ../../sass/mobile.scss */
+/* line 165, ../../sass/mobile.scss */
 ul .content-row, ul .list-row {
   height: 80px;
 }
-/* line 167, ../../sass/mobile.scss */
+/* line 173, ../../sass/mobile.scss */
 ul .content-row > .icon-column, ul .content-row .list-row > .icon-column, ul .content-row > .content-column, ul .content-row .list-row > .content-column, ul .list-row .content-row > .icon-column, ul .list-row > .icon-column, ul .list-row .content-row > .content-column, ul .list-row > .content-column {
   height: 100%;
 }
-/* line 171, ../../sass/mobile.scss */
+/* line 177, ../../sass/mobile.scss */
 ul .content-row > .icon-column, ul .list-row > .icon-column {
   line-height: 80px;
   width: 60px;
@@ -273,53 +279,39 @@ ul .content-row > .icon-column, ul .list-row > .icon-column {
   position: static;
   font-size: 24px;
 }
-/* line 181, ../../sass/mobile.scss */
+/* line 187, ../../sass/mobile.scss */
 ul .content-row > .icon-column input[type="checkbox"], ul .list-row > .icon-column input[type="checkbox"] {
   position: static;
   margin: 0;
 }
-/* line 187, ../../sass/mobile.scss */
+/* line 193, ../../sass/mobile.scss */
 ul .content-row > .content-column, ul .list-row > .content-column {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -ms-box-flex: 1;
   box-flex: 1;
+  padding: 4px;
 }
-/* line 191, ../../sass/mobile.scss */
+/* line 198, ../../sass/mobile.scss */
 ul .content-row > .content-column h2, ul .list-row > .content-column h2 {
-  font-size: 20px;
+  font-size: 16px;
 }
-/* line 196, ../../sass/mobile.scss */
+/* line 203, ../../sass/mobile.scss */
 ul .content-row > .content-column h3, ul .list-row > .content-column h3 {
   font-size: 12px;
 }
-/* line 201, ../../sass/mobile.scss */
+/* line 208, ../../sass/mobile.scss */
 ul .content-row > .content-column h4, ul .list-row > .content-column h4 {
   font-size: 10px;
 }
-/* line 206, ../../sass/mobile.scss */
+/* line 213, ../../sass/mobile.scss */
 ul .content-row > .content-column p, ul .list-row > .content-column p {
   font-size: 12px;
   font-weight: 300;
   max-height: 30px;
 }
-/* line 214, ../../sass/mobile.scss */
+/* line 221, ../../sass/mobile.scss */
 ul .content-row > .content-column h2, ul .content-row > .content-column h3, ul .content-row > .content-column h4, ul .content-row > .content-column p, ul .list-row > .content-column h2, ul .list-row > .content-column h3, ul .list-row > .content-column h4, ul .list-row > .content-column p {
   margin: 0;
   padding: 2px;
-}
-/* line 219, ../../sass/mobile.scss */
-ul .content-row > .content-column .fromId, ul .content-row > .content-column .fromName, ul .list-row > .content-column .fromId, ul .list-row > .content-column .fromName {
-  width: 50%;
-  display: inline-block;
-}
-/* line 224, ../../sass/mobile.scss */
-ul .content-row > .content-column .fromId, ul .list-row > .content-column .fromId {
-  float: right;
-  text-align: right;
-  font-weight: 300;
-}
-/* line 230, ../../sass/mobile.scss */
-ul .content-row > .content-column .fromName, ul .list-row > .content-column .fromName {
-  float: left;
 }
