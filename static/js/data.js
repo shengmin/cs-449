@@ -43,7 +43,7 @@ var cs449 = {};
       contact: 'ShengMin Zhang',
       summary: 'Could you send people to fix fence?',
       timestamp: 1375629578449,
-      labels: [{ color: '#DB0000', text: 'urgent' }],
+      labels: [{ color: '#00DB00', text: 'NEW MSG: ShengMin S.' }],
       messages: [
         {
           type: 'cell',
@@ -137,7 +137,7 @@ var cs449 = {};
       contact: 'ShengMin Zhang',
       summary: 'It\'s reported that the chair at the Waterloo Park is broken, send people to fix it',
       timestamp: 1375629578449,
-      labels: [{ color: '#DB0000', text: 'urgent' }, { color: '#0F71D9', text: 'FWD: Jessica' }],
+      labels: [{ color: '#00DB00', text: 'NEW MSG: ShengMin S.' }, { color: '#0F71D9', text: 'FWD: Jessica' }],
       messages: [
         {
           isNew: true,
