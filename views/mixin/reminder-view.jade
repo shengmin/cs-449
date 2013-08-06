@@ -1,11 +1,9 @@
-include list
-
 mixin reminder-view(messages, tasks)
   div#reminder-view(data-role="view", data-title="Reminders", data-init="onReminderViewInit")
     header(data-role="header")
       div(data-role="navbar")
         h4(data-role="view-title")
-    ul(data-role="listview", data-type="group")
+    ul.clickable(data-role="listview", data-type="group")
       if messages.length > 0
         li #{messages.length} New Messages
           ul
@@ -17,17 +15,29 @@ mixin reminder-view(messages, tasks)
                 div.content-row
                   div.icon-column
                     i(class=['km-icon', 'km-' + message.type])
-                  div.content-column.clickable
+                  div.content-column
                     h3 #{message.fromName}
                     h2 #{message.title}
                     p #{message.content}
-                  div.icon-column.clickable
+                  div.icon-column
                     i.km-icon.km-details
       if tasks.length > 0
         li #{tasks.length} Reminders
           ul
-            li ddd
-            li jjj
+            each task in tasks
+              li
+                div.group
+                  span.left #{task.contact}
+                  span.right #{task.date}
+                div.content-row
+                  div.content-column
+                    h2 #{task.name}
+                    p #{task.summary}
+                  div.icon-column
+                    i.km-icon.km-details
+                div.label-row
+                  each label in task.labels
+                    div.label(style='background-color: ' + label.color) #{label.text}
 
     footer(data-role="footer")
       div(data-role="navbar")
