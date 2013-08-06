@@ -40,19 +40,34 @@ block body
         a(data-role="button", data-icon="home", href="#task-list-view") Home
 
 block body-script
-  script#task-template(type="text/x-kendo-template")
-    div.list-row
-      div.icon-column.km-listview-label
-        input(type="checkbox")
-      div.content-column.clickable(
-        data-role="touch",
-        data-enable-swipe="true",
-        data-tap="onContentColumnTap",
-        data-swipe="onContentColumnSwipe",
-        data-min-x-delta="100",
-        data-task-id="${id}"
-      )
-        h2 ${name}
-        h3 ${date}
-        p ${summary}
+  script#task-template(type="text/x-kendo-template").
+    <div class="group">
+      <span class="left contact"> #= contact #</span>
+      <span class="right"> #= date #</span>
+    </div>
+    <div class="content-row">
+      <div class="icon-column km-listview-label">
+        <input type="checkbox" />
+      </div>
+      <div class="content-column clickable"
+        data-role="touch"
+        data-enable-swipe="true"
+        data-tap="onContentColumnTap"
+        data-swipe="onContentColumnSwipe"
+        data-min-x-delta="100"
+        data-task-id="#= id #">
+        <h2> #= name #</h2>
+        <p> #= summary #</p>
+      </div>
+      <div class="icon-column">
+        <i class="km-icon km-details"></i>
+      </div>
+    </div>
+    <div class="label-row">
+      # for (var i = 0; i < labels.length; i++) { #
+        <div class="label" style="#= 'background-color:' + labels[i].color #">
+          #= labels[i].text #
+        </div>
+      # } #
+    </div>
   script(src="/js/task-list.js")

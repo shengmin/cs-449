@@ -27,11 +27,11 @@ mixin reminder-view(messages, tasks, home)
             each task in tasks
               li
                 div.group
-                  span.left(style="font-size: 14px;") #{task.contact}
+                  span.left.contact #{task.contact}
                   span.right #{task.date}
                 div.content-row
                   div.content-column
-                    h2(style="font-size: 20px;") #{task.name}
+                    h2 #{task.name}
                     p #{task.summary}
                   div.icon-column
                     i.km-icon.km-details
