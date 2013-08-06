@@ -24,7 +24,7 @@ block body
   +reminder-view(newMessages, outdatedTasks, '#task-list-view')
   +task-forward(contacts)
   +task-add
-  +notification-bar("['home-screen', 'native-mail-view', 'phone-call-view', 'reminder-view', 'task-list-view', 'message-list-view']", "#reminder-view", newMessages.length + outdatedTasks.length)
+  +notification-bar("['home-screen', 'native-mail-view', 'phone-call-view', 'reminder-view']", "#reminder-view", newMessages.length + outdatedTasks.length)
 
   div#phone-call-view(data-role="view", data-hide="onPhoneCallViewHide", data-before-show="onPhoneCallViewBeforeShow")
     div(data-role="content")
