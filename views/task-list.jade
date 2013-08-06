@@ -8,62 +8,39 @@ block body
   div#home-screen(data-role="view")
     div(data-role="content")
       img.native(src="/images/home-screen.jpg")
-  div#category-view(data-after-show="onViewAfterShow", data-role="view", data-layout="default-layout", data-init="onCategoryViewInit")
-    ul#category-list
-  div#contact-view(data-after-show="onViewAfterShow",data-role="view", data-layout="default-layout", data-init="onContactViewInit")
-    ul#contact-list
-  div#all-view(data-after-show="onViewAfterShow",data-role="view", data-layout="default-layout", data-init="onAllViewInit")
-    ul#all-list
-  +reminder-view(newMessages, outdatedTasks, '#category-view')
+  div#task-list-view(data-after-show="onTaskListViewAfterShow", data-role="view", data-layout="default-layout", data-init="onTaskListViewInit")
+    div#task-list
+
+  +reminder-view(newMessages, outdatedTasks, '#task-list-view')
   +task-forward(contacts)
   +task-add
-  +notification-bar("['home-screen', 'reminder-view', 'category-view', 'contact-view', 'all-view']", "#reminder-view", newMessages.length + outdatedTasks.length)
-  div(data-role="layout", data-id="default-layout", data-show="onLayoutShow")
+  +notification-bar("['home-screen', 'reminder-view', 'task-list-view']", "#reminder-view", newMessages.length + outdatedTasks.length)
+  div(data-role="layout", data-id="default-layout")
     div#group-by-popover(data-role="popover", data-popup="{ height: '12em' }")
       div(data-role="view", data-init="onGroupByPopOverInit")
         ul(data-role="listview")
           li
             label Group By Category
-              input(name="group-by-select", type="radio", checked="checked", value="category-view")
+              input(name="group-by-select", type="radio", checked="checked", value="category")
           li
             label Group By Contact
-              input(name="group-by-select", type="radio", value="contact-view")
-          li
-            label View All
-              input(name="group-by-select", type="radio", value="all-view")
-
-      div#remind-me-popover(data-role="popover", data-popup="{ height: '16em', width: '28em' }")
-        div(data-role="view", data-init="onRemindMePopOverInit")
-          ul(data-role="listview")
-            li
-              label In One Day
-                input(name="remind-me", type="radio")
-            li
-              label In One Week
-                input(name="remind-me", type="radio")
-            li
-              label In One Month
-                input(name="remind-me", type="radio")
-            li
-              label Custom
-                input(name="remind-me", type="date")
+              input(name="group-by-select", type="radio", value="contact")
 
     +task-menu
     header#unselected-navbar(data-role="header")
       div(data-role="navbar")
-        a(data-align="left", data-role="button", data-icon="menu", data-rel="popover", href="#group-by-popover") Group By
-        a(data-align="left", data-role="button", data-icon="add", href="#task-add-view") Add Task
+        a(data-align="right", data-role="button", data-icon="menu", data-rel="popover", href="#group-by-popover") Group By
+        a(data-align="right", data-role="button", data-icon="add", href="#task-add-view") Add Task
       ul(data-role="listview")
         li(data-icon="search")
-          label Search
-            input(type="search")
+          label &nbsp;
+            input(type="search", placeholder="Search")
     footer(data-role="footer")
       div(data-role="navbar")
-        ul(data-role="buttongroup", data-select="goHome")
-          li(data-icon="home") Home
+        a(data-role="button", data-icon="home", href="#task-list-view") Home
 
 block body-script
-  script#list-view-template(type="text/x-kendo-template")
+  script#task-template(type="text/x-kendo-template")
     div.list-row
       div.icon-column.km-listview-label
         input(type="checkbox")

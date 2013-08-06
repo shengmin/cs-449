@@ -17,6 +17,10 @@ mixin task-menu
 
   header#task-menu(data-role="header")
     div(data-role="navbar")
-      a(data-align="left", data-role="button", data-icon="forward", href="#task-forward-view") Forward
-      a(data-align="left", data-role="button", data-icon="recents", href="#remind-me-popover", data-rel="popover") Remind Me Later
-      a#task-menu-mark-complete(data-click="onMenuMarkCompleteClick", data-align="left", data-role="button", data-icon="check") Mark Complete
+      a(data-align="right", data-role="button", data-icon="forward", href="#task-forward-view") Forward
+      a(data-align="right", data-role="button", data-icon="recents", href="#remind-me-popover", data-rel="popover") Remind Me Later
+      a#task-menu-mark-complete(data-click="onMenuMarkCompleteClick", data-align="right", data-role="button", data-icon="check") Mark Complete
+    ul(data-role="listview")
+      li(data-icon="search")
+        label &nbsp;
+          input(type="search", placeholder="Search")
