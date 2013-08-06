@@ -15,6 +15,10 @@ function onTaskListViewInit() {
     dataSource: DS_TASKS
   });
 
+  addCheckBoxHandler();
+}
+
+function addCheckBoxHandler() {
   $('#task-list input[type="checkbox"]').change(function() {
     toggleHeader();
   });
@@ -38,6 +42,8 @@ function onGroupByPopOverInit() {
     }
     var taskList = $('#task-list').data('kendoMobileListView');
     taskList.setDataSource(DS_TASKS);
+    $('#group-by-popover').data('kendoMobilePopOver').close();
+    addCheckBoxHandler();
   });
 }
 
@@ -46,6 +52,11 @@ function onRemindMePopOverInit() {
     $('#remind-me-popover').data('kendoMobilePopOver').close();
     $(this).prop('checked', false);
     // Remove the tasks that have been selected
-    $('#task-list-view #task-list input[type="checkbox"]:checked').prop('checked', false);
+    $('#task-list-view #task-list input[type="checkbox"]:checked').each(function() {
+      var model = DS_TASKS.getByUid($(this).closest('li[data-uid]').attr('data-uid'));
+      model.set('category', CAT_WAITING);
+    });
+    $('#task-list').data('kendoMobileListView').setDataSource(DS_TASKS);
+    toggleHeader();
   });
 }

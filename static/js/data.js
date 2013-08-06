@@ -1,11 +1,12 @@
 'use strict';
 
 var cs449 = {};
+var CAT_PRIORITY = '1 - Priority';
+var CAT_WAITING = '2 - Waiting on Others';
+var CAT_EVERYTHING_ELSE = '3 - Everything Else';
 
 (function () {
-  var CAT_PRIORITY = '1 - Priority';
-  var CAT_WAITING = '2 - Waiting on Others';
-  var CAT_EVERYTHING_ELSE = '3 - Everything Else';
+
   var MONTHS = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Nov', 'Dec'];
 
   function getDateString(timestamp) {
