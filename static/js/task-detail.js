@@ -60,3 +60,31 @@ function onPhoneCallShow() {
     $("#end-call-view").data("kendoMobileModalView").open();
   }, 2000);
 }
+
+function onAddNote() {
+  console.log("add a note");
+  $('#noteBox').show();
+  $('#addCallToExisting').hide();
+  $('#addCallToContacts').hide();
+  $('#noteBox').css('height', '6em');
+  $('#end-call-view').css('height', '15em');
+  $('#callFinishCancel').css('width', '50%');
+  $('#callFinishDone').show();
+  $('#callFinishDone').css('width', '50%');
+}
+
+function onCancelAddNote() {
+  if (!$('#noteBox').is(":visible")) {
+    console.log("closing modal dialog");
+    $("#end-call-view").data("kendoMobileModalView").close();
+    return;
+  }
+  $('#noteBox').hide();
+  $('#noteBox').css('height', '0em');
+  $('#addCallToExisting').show();
+  $('#addCallToContacts').show();
+  $('#end-call-view').css('height', '14em');
+  $('#callFinishDone').css('width', '0%');
+  $('#callFinishCancel').css('width', '100%');
+  $('#callFinishDone').hide();
+}
