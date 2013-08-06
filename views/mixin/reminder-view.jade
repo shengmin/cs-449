@@ -1,5 +1,5 @@
-mixin reminder-view(messages, tasks)
-  div#reminder-view(data-role="view", data-title="Reminders", data-init="onReminderViewInit")
+mixin reminder-view(messages, tasks, home)
+  div#reminder-view(data-role="view", data-title="Reminders")
     header(data-role="header")
       div(data-role="navbar")
         h4(data-role="view-title")
@@ -41,4 +41,4 @@ mixin reminder-view(messages, tasks)
 
     footer(data-role="footer")
       div(data-role="navbar")
-        a(data-role="button", href="#task-list-view", data-icon="home") Enter
+        a(data-role="button", href="#{home}", data-icon="home") Enter

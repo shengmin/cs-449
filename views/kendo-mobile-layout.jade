@@ -22,12 +22,13 @@ html
         block body
         script.
           var app = new kendo.mobile.Application($('#mobile-application-container'), {
-            skin: 'flat'
+            skin: 'flat',
+            transition: 'slide:up'
           });
 
           var notificationIndicatorColor = '#f00';
           setInterval(function() {
             notificationIndicatorColor = (notificationIndicatorColor == '#f00') ? '#444' : '#f00';
-            //$('#notification-indicator').css('color', notificationIndicatorColor);
+            $('#notification-indicator').css('color', notificationIndicatorColor);
           }, 2000);
         block body-script

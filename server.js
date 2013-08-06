@@ -29,7 +29,9 @@ app.get('/:type/:id', function(request, response) {
   var viewData = {
     type: type,
     id: id,
-    contacts: data.contacts
+    contacts: data.contacts,
+    newMessages: data.newMessages,
+    outdatedTasks: data.outdatedTasks
   };
   viewData[type] = data[type + 's'][id];
   response.render(type + '-detail', viewData);
