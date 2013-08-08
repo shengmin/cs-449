@@ -35,9 +35,9 @@ function onTaskListViewAfterShow() {
 }
 
 function toggleHeader() {
-  var size = $('#task-list-view #task-list input[type="checkbox"]:checked').size();
-  $('#task-menu').toggle(size > 0);
-  $('#unselected-navbar').toggle(size <= 0);
+  var size = $('#task-list input[type="checkbox"]:checked').size();
+  $('#task-list #task-menu').toggle(size > 0);
+  $('#task-list #unselected-navbar').toggle(size <= 0);
 }
 
 function onGroupByPopOverInit() {
