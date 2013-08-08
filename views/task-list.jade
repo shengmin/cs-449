@@ -12,12 +12,31 @@ block body
     div(data-role="content")
       img.native(src="/images/home-screen.jpg")
 
-  div#task-list-view(data-after-show="onTaskListViewAfterShow", data-role="view", data-layout="default-layout", data-init="onTaskListViewInit")
+  div#task-list-view(data-after-show="onTaskListViewAfterShow", data-role="view", data-init="onTaskListViewInit")
+    div#group-by-popover(data-role="popover", data-popup="{ height: '12em' }")
+      div(data-role="view", data-init="onGroupByPopOverInit")
+        ul(data-role="listview")
+          li
+            label Group By Category
+              input(name="group-by-select", type="radio", checked="checked", value="category")
+          li
+            label Group By Contact
+              input(name="group-by-select", type="radio", value="contact")
+
+    +task-menu
+    header#unselected-navbar(data-role="header")
+      div(data-role="navbar")
+        a(data-align="right", data-role="button", data-icon="menu", data-rel="popover", href="#group-by-popover") Group By
+        a(data-align="right", data-role="button", data-icon="add", href="#task-add-view") Add Task
+      +search-bar
     ul#task-list
+    +footer
 
   div#message-list-view(data-role="view", data-layout="message-layout", data-before-show="onMessageListViewBeforeShow")
+    +task-menu
     ul#message-list-title
     ul#message-list
+    +footer
 
   +phone-preview-view
   +mail-preview-view
@@ -48,29 +67,6 @@ block body
       li
         button#callFinishCancel.animatable(data-role="button", data-click="onCancelAddNote", style="float: left;") Cancel
         button#callFinishDone.animatable(href="#task-add-view", data-role="button", style="display: none; background-color: #26a; color: white; float: right; width: 0%;") Done
-
-  div(data-role="layout", data-id="default-layout")
-    div#group-by-popover(data-role="popover", data-popup="{ height: '12em' }")
-      div(data-role="view", data-init="onGroupByPopOverInit")
-        ul(data-role="listview")
-          li
-            label Group By Category
-              input(name="group-by-select", type="radio", checked="checked", value="category")
-          li
-            label Group By Contact
-              input(name="group-by-select", type="radio", value="contact")
-
-    +task-menu
-    header#unselected-navbar(data-role="header")
-      div(data-role="navbar")
-        a(data-align="right", data-role="button", data-icon="menu", data-rel="popover", href="#group-by-popover") Group By
-        a(data-align="right", data-role="button", data-icon="add", href="#task-add-view") Add Task
-      +search-bar
-    +footer
-
-  div(data-role="layout", data-id="message-layout")
-    +task-menu
-    +footer
 
 block body-script
   script#message-title-template(type="text/x-kendo-template").
