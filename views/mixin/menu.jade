@@ -21,7 +21,7 @@ mixin footer
     div(data-role="navbar")
       a(data-role="button", data-icon="home", href="#task-list-view") Home
 
-mixin task-menu
+mixin task-menu(visible)
   div#remind-me-popover(data-role="popover", data-popup="{ height: '16em', width: '28em' }")
     div(data-role="view", data-init="onRemindMePopOverInit")
       ul(data-role="listview")
@@ -38,7 +38,8 @@ mixin task-menu
           label Custom
             input(name="remind-me", type="date")
 
-  header#task-menu(data-role="header")
+  - style = visible ? '' : 'display: none;';
+  header#task-menu(data-role="header", style=style)
     div(data-role="navbar")
       a(data-align="right", data-role="button", data-icon="forward", href="#task-forward-view") Forward
       a(data-align="right", data-role="button", data-icon="recents", href="#remind-me-popover", data-rel="popover") Remind Me Later
