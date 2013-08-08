@@ -36,8 +36,8 @@ function onTaskListViewAfterShow() {
 
 function toggleHeader() {
   var size = $('#task-list input[type="checkbox"]:checked').size();
-  $('#task-list #task-menu').toggle(size > 0);
-  $('#task-list #unselected-navbar').toggle(size <= 0);
+  $('#task-list-view #task-menu').toggle(size > 0);
+  $('#task-list-view #unselected-navbar').toggle(size <= 0);
 }
 
 function onGroupByPopOverInit() {
